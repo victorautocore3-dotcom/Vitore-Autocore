@@ -4,7 +4,8 @@ import {FaqSection, type FaqItem} from '../components/FaqSection';
 import {ContactCtaStrip} from '../components/ContactCtaStrip';
 import {StudioImage} from '../components/StudioImage';
 import {AiVisibilityPanel} from '../components/AiVisibilityPanel';
-import {BUSINESS_FACTS, PAGE_SEO, STUDIO_IMAGES} from '../data/business';
+import {HeroEntrance, RevealSection} from '../components/MotionPrimitives';
+import {BUSINESS_FACTS, PAGE_SEO, STOCK_PHOTOS} from '../data/business';
 
 const GOOGLE_FAQS: FaqItem[] = [
   {
@@ -102,6 +103,12 @@ const LOCAL_TRADES = [
   'Wedding photographers',
 ];
 
+const LOCAL_BUSINESS_GALLERY = [
+  STOCK_PHOTOS.ukHighStreet,
+  STOCK_PHOTOS.localShopFront,
+  STOCK_PHOTOS.boutiqueShopFront,
+];
+
 export function GoogleVisibilityPage() {
   return (
     <>
@@ -110,7 +117,7 @@ export function GoogleVisibilityPage() {
       <section className="py-16 sm:py-22">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-stretch">
-            <div className="lg:col-span-7 flex flex-col justify-center">
+            <HeroEntrance className="lg:col-span-7 flex flex-col justify-center">
               <p className="text-sm font-medium text-[#F59E0B]">
                 Service 04 · Search and AI Visibility
               </p>
@@ -140,30 +147,52 @@ export function GoogleVisibilityPage() {
                   href={BUSINESS_FACTS.whatsappHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-md bg-[#F59E0B] hover:bg-[#D97706] text-[#141413] text-sm font-semibold transition-colors whitespace-nowrap shrink-0"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-md bg-[#F59E0B] hover:bg-[#D97706] hover:-translate-y-0.5 text-[#141413] text-sm font-semibold transition-all duration-200 whitespace-nowrap shrink-0"
                 >
                   <MessageCircle className="w-4 h-4 shrink-0" aria-hidden="true" />
                   <span>Message on WhatsApp for a clear price</span>
                 </a>
               </div>
-            </div>
+            </HeroEntrance>
 
-            <div className="lg:col-span-5">
-              <div className="h-full min-h-[260px] rounded-2xl overflow-hidden border border-[#2C2C28] bg-[#1C1C1A]">
+            <HeroEntrance delay={0.12} className="lg:col-span-5">
+              <div className="group h-full min-h-[260px] rounded-2xl overflow-hidden border border-[#2C2C28] bg-[#1C1C1A]">
                 <StudioImage
-                  src={STUDIO_IMAGES.searchMaps}
-                  alt="Dark architectural monitor showing local search map grid with amber location pins"
-                  className="w-full h-full object-cover"
+                  src={STOCK_PHOTOS.phoneMapSearch.src}
+                  fallbackSrc={STOCK_PHOTOS.phoneMapSearch.fallbackSrc}
+                  alt={STOCK_PHOTOS.phoneMapSearch.alt}
+                  eager
+                  className="w-full h-full object-cover group-hover:scale-[1.03]"
                 />
               </div>
-            </div>
+            </HeroEntrance>
           </div>
+        </div>
+      </section>
+
+      <section className="py-10 border-t border-[#2C2C28] bg-[#161614]">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+          <RevealSection className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {LOCAL_BUSINESS_GALLERY.map((photo) => (
+              <div
+                key={photo.src}
+                className="group aspect-[16/10] rounded-xl overflow-hidden border border-[#2C2C28] bg-[#1C1C1A]"
+              >
+                <StudioImage
+                  src={photo.src}
+                  fallbackSrc={photo.fallbackSrc}
+                  alt={photo.alt}
+                  className="w-full h-full object-cover group-hover:scale-[1.03]"
+                />
+              </div>
+            ))}
+          </RevealSection>
         </div>
       </section>
 
       <section className="py-16 sm:py-20 border-t border-[#2C2C28]">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl">
+          <RevealSection className="max-w-2xl">
             <h2 className="font-display text-2xl sm:text-3xl font-semibold tracking-tight text-[#F4F3EE]">
               SEO, AEO and GEO in plain words
             </h2>
@@ -171,29 +200,28 @@ export function GoogleVisibilityPage() {
               Buyers do not only scroll social media. Every day they search Google, ask voice
               assistants, and ask ChatGPT or Gemini who to book.
             </p>
-          </div>
+          </RevealSection>
 
           <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
-            {THREE_PILLARS.map((pillar) => {
+            {THREE_PILLARS.map((pillar, idx) => {
               const Icon = pillar.icon;
               return (
-                <div
-                  key={pillar.label}
-                  className="bg-[#1C1C1A] border border-[#2C2C28] rounded-xl p-7"
-                >
-                  <div className="flex items-center justify-between">
-                    <span className="font-display text-sm font-semibold text-[#F59E0B]">
-                      {pillar.label}
-                    </span>
-                    <Icon className="w-5 h-5 text-[#85847E]" aria-hidden="true" />
+                <RevealSection key={pillar.label} delay={idx * 0.05}>
+                  <div className="h-full bg-[#1C1C1A] border border-[#2C2C28] hover:border-[#40403A] hover:-translate-y-0.5 transition-all duration-200 rounded-xl p-7">
+                    <div className="flex items-center justify-between">
+                      <span className="font-display text-sm font-semibold text-[#F59E0B]">
+                        {pillar.label}
+                      </span>
+                      <Icon className="w-5 h-5 text-[#85847E]" aria-hidden="true" />
+                    </div>
+                    <h3 className="mt-4 font-display text-xl font-semibold text-[#F4F3EE]">
+                      {pillar.title}
+                    </h3>
+                    <p className="mt-3 text-sm sm:text-[15px] text-[#B3B2AB] leading-relaxed">
+                      {pillar.description}
+                    </p>
                   </div>
-                  <h3 className="mt-4 font-display text-xl font-semibold text-[#F4F3EE]">
-                    {pillar.title}
-                  </h3>
-                  <p className="mt-3 text-sm sm:text-[15px] text-[#B3B2AB] leading-relaxed">
-                    {pillar.description}
-                  </p>
-                </div>
+                </RevealSection>
               );
             })}
           </div>
@@ -202,7 +230,7 @@ export function GoogleVisibilityPage() {
 
       <section className="py-16 sm:py-20 border-t border-[#2C2C28] bg-[#161614]">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-          <div className="max-w-2xl">
+          <RevealSection className="max-w-2xl">
             <p className="text-sm font-medium text-[#F59E0B]">AI Visibility Check</p>
             <h2 className="mt-2 font-display text-2xl sm:text-3xl font-semibold tracking-tight text-[#F4F3EE]">
               What I inspect across AI search tools
@@ -211,7 +239,7 @@ export function GoogleVisibilityPage() {
               Your business is checked across the AI assistants buyers use, using a clear six-part
               checklist.
             </p>
-          </div>
+          </RevealSection>
 
           <AiVisibilityPanel />
         </div>
@@ -219,7 +247,7 @@ export function GoogleVisibilityPage() {
 
       <section className="py-16 sm:py-20 border-t border-[#2C2C28]">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl">
+          <RevealSection className="max-w-2xl">
             <p className="text-sm font-medium text-[#F59E0B]">8-Step Setup</p>
             <h2 className="mt-2 font-display text-2xl sm:text-3xl font-semibold tracking-tight text-[#F4F3EE]">
               What the setup includes
@@ -228,28 +256,27 @@ export function GoogleVisibilityPage() {
               Every part of the setup is done cleanly and checked with real before and after
               pictures.
             </p>
-          </div>
+          </RevealSection>
 
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {SETUP_STEPS.map((step) => (
-              <div
-                key={step.number}
-                className="bg-[#1C1C1A] border border-[#2C2C28] rounded-xl p-6 flex flex-col justify-between gap-4"
-              >
-                <div>
-                  <span className="font-display text-3xl font-bold text-[#F59E0B] tabular-nums">
-                    {step.number}
-                  </span>
-                  <h3 className="mt-4 font-display text-lg font-semibold text-[#F4F3EE] leading-snug">
-                    {step.title}
-                  </h3>
-                  <p className="mt-2.5 text-sm text-[#B3B2AB] leading-relaxed">{step.detail}</p>
+            {SETUP_STEPS.map((step, idx) => (
+              <RevealSection key={step.number} delay={idx * 0.04}>
+                <div className="h-full bg-[#1C1C1A] border border-[#2C2C28] hover:border-[#40403A] hover:-translate-y-0.5 transition-all duration-200 rounded-xl p-6 flex flex-col justify-between gap-4">
+                  <div>
+                    <span className="font-display text-3xl font-bold text-[#F59E0B] tabular-nums">
+                      {step.number}
+                    </span>
+                    <h3 className="mt-4 font-display text-lg font-semibold text-[#F4F3EE] leading-snug">
+                      {step.title}
+                    </h3>
+                    <p className="mt-2.5 text-sm text-[#B3B2AB] leading-relaxed">{step.detail}</p>
+                  </div>
                 </div>
-              </div>
+              </RevealSection>
             ))}
           </div>
 
-          <div className="mt-8 bg-[#1C1C1A] border border-[#2C2C28] rounded-xl p-7">
+          <RevealSection className="mt-8 bg-[#1C1C1A] border border-[#2C2C28] rounded-xl p-7">
             <h3 className="font-display text-lg font-semibold text-[#F4F3EE]">
               How pricing works
             </h3>
@@ -258,7 +285,7 @@ export function GoogleVisibilityPage() {
               on WhatsApp or email with your website and services and you will get a clear price
               before any work starts.
             </p>
-          </div>
+          </RevealSection>
         </div>
       </section>
 

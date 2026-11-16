@@ -3,7 +3,8 @@ import {SeoHead} from '../components/SeoHead';
 import {FaqSection, type FaqItem} from '../components/FaqSection';
 import {ContactCtaStrip} from '../components/ContactCtaStrip';
 import {StudioImage} from '../components/StudioImage';
-import {BUSINESS_FACTS, PAGE_SEO, STUDIO_IMAGES} from '../data/business';
+import {HeroEntrance, RevealSection} from '../components/MotionPrimitives';
+import {BUSINESS_FACTS, PAGE_SEO, STOCK_PHOTOS} from '../data/business';
 
 const SOCIAL_FAQS: FaqItem[] = [
   {
@@ -59,6 +60,12 @@ const DELIVERABLES = [
   },
 ];
 
+const SOCIAL_GALLERY = [
+  STOCK_PHOTOS.shortVideoRecording,
+  STOCK_PHOTOS.phoneFilmingReels,
+  STOCK_PHOTOS.creatorEditingDark,
+];
+
 export function SocialMediaManagementPage() {
   return (
     <>
@@ -67,7 +74,7 @@ export function SocialMediaManagementPage() {
       <section className="py-16 sm:py-22">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-stretch">
-            <div className="lg:col-span-7 flex flex-col justify-center">
+            <HeroEntrance className="lg:col-span-7 flex flex-col justify-center">
               <p className="text-sm font-medium text-[#F59E0B]">
                 Service 02 · Instagram, Facebook and TikTok
               </p>
@@ -85,30 +92,52 @@ export function SocialMediaManagementPage() {
                   href={BUSINESS_FACTS.whatsappHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-md bg-[#F59E0B] hover:bg-[#D97706] text-[#141413] text-sm font-semibold transition-colors whitespace-nowrap shrink-0"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-md bg-[#F59E0B] hover:bg-[#D97706] hover:-translate-y-0.5 text-[#141413] text-sm font-semibold transition-all duration-200 whitespace-nowrap shrink-0"
                 >
                   <MessageCircle className="w-4 h-4 shrink-0" aria-hidden="true" />
                   <span>Discuss your page on WhatsApp</span>
                 </a>
               </div>
-            </div>
+            </HeroEntrance>
 
-            <div className="lg:col-span-5">
-              <div className="h-full min-h-[260px] rounded-2xl overflow-hidden border border-[#2C2C28] bg-[#1C1C1A]">
+            <HeroEntrance delay={0.12} className="lg:col-span-5">
+              <div className="group h-full min-h-[260px] rounded-2xl overflow-hidden border border-[#2C2C28] bg-[#1C1C1A]">
                 <StudioImage
-                  src={STUDIO_IMAGES.socialFeeds}
-                  alt="Smartphone displaying social media feed on dark studio desk with notebook and brass pen"
-                  className="w-full h-full object-cover"
+                  src={STOCK_PHOTOS.phoneSocialFeed.src}
+                  fallbackSrc={STOCK_PHOTOS.phoneSocialFeed.fallbackSrc}
+                  alt={STOCK_PHOTOS.phoneSocialFeed.alt}
+                  eager
+                  className="w-full h-full object-cover group-hover:scale-[1.03]"
                 />
               </div>
-            </div>
+            </HeroEntrance>
           </div>
+        </div>
+      </section>
+
+      <section className="py-10 border-t border-[#2C2C28] bg-[#161614]">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+          <RevealSection className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {SOCIAL_GALLERY.map((photo) => (
+              <div
+                key={photo.src}
+                className="group aspect-[16/10] rounded-xl overflow-hidden border border-[#2C2C28] bg-[#1C1C1A]"
+              >
+                <StudioImage
+                  src={photo.src}
+                  fallbackSrc={photo.fallbackSrc}
+                  alt={photo.alt}
+                  className="w-full h-full object-cover group-hover:scale-[1.03]"
+                />
+              </div>
+            ))}
+          </RevealSection>
         </div>
       </section>
 
       <section className="py-16 sm:py-20 border-t border-[#2C2C28]">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl">
+          <RevealSection className="max-w-2xl">
             <h2 className="font-display text-2xl sm:text-3xl font-semibold tracking-tight text-[#F4F3EE]">
               What your monthly management covers
             </h2>
@@ -116,24 +145,23 @@ export function SocialMediaManagementPage() {
               Handled remotely from Lagos for small businesses in the UK and US, backed by 5+ years
               of freelance social media management and content creation.
             </p>
-          </div>
+          </RevealSection>
 
           <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {DELIVERABLES.map((item) => {
+            {DELIVERABLES.map((item, idx) => {
               const Icon = item.icon;
               return (
-                <div
-                  key={item.title}
-                  className="bg-[#1C1C1A] border border-[#2C2C28] rounded-xl p-7"
-                >
-                  <Icon className="w-5 h-5 text-[#F59E0B]" aria-hidden="true" />
-                  <h3 className="mt-4 font-display text-lg font-semibold text-[#F4F3EE]">
-                    {item.title}
-                  </h3>
-                  <p className="mt-2 text-sm sm:text-[15px] text-[#B3B2AB] leading-relaxed">
-                    {item.description}
-                  </p>
-                </div>
+                <RevealSection key={item.title} delay={idx * 0.04}>
+                  <div className="h-full bg-[#1C1C1A] border border-[#2C2C28] hover:border-[#40403A] hover:-translate-y-0.5 transition-all duration-200 rounded-xl p-7">
+                    <Icon className="w-5 h-5 text-[#F59E0B]" aria-hidden="true" />
+                    <h3 className="mt-4 font-display text-lg font-semibold text-[#F4F3EE]">
+                      {item.title}
+                    </h3>
+                    <p className="mt-2 text-sm sm:text-[15px] text-[#B3B2AB] leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
+                </RevealSection>
               );
             })}
           </div>

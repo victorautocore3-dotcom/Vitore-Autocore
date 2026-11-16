@@ -8,6 +8,7 @@ import {
   ShieldCheck,
   Star,
 } from 'lucide-react';
+import {RevealSection} from './MotionPrimitives';
 
 const AI_ENGINES = [
   {
@@ -63,7 +64,7 @@ const CHECKLIST_FACTORS = [
 
 export function AiVisibilityPanel() {
   return (
-    <div className="bg-[#1C1C1A] border border-[#2C2C28] rounded-2xl overflow-hidden">
+    <RevealSection className="bg-[#1C1C1A] border border-[#2C2C28] rounded-2xl overflow-hidden">
       <div className="px-6 sm:px-8 py-5 border-b border-[#2C2C28] bg-[#181816] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
         <div className="flex items-center gap-3">
           <Bot className="w-5 h-5 text-[#F59E0B] shrink-0" aria-hidden="true" />
@@ -85,7 +86,7 @@ export function AiVisibilityPanel() {
             {AI_ENGINES.map((engine) => (
               <div
                 key={engine.name}
-                className="bg-[#141413] border border-[#2C2C28] rounded-xl p-4 flex flex-col justify-between gap-2"
+                className="bg-[#141413] border border-[#2C2C28] hover:border-[#40403A] hover:-translate-y-0.5 transition-all duration-200 rounded-xl p-4 flex flex-col justify-between gap-2"
               >
                 <div className="flex items-center justify-between gap-2">
                   <span className="font-display text-base font-semibold text-[#F4F3EE]">
@@ -109,7 +110,7 @@ export function AiVisibilityPanel() {
               return (
                 <div
                   key={factor.name}
-                  className="bg-[#141413] border border-[#2C2C28] rounded-xl p-5 flex flex-col justify-between gap-4"
+                  className="bg-[#141413] border border-[#2C2C28] hover:border-[#40403A] hover:-translate-y-0.5 transition-all duration-200 rounded-xl p-5 flex flex-col justify-between gap-4"
                 >
                   <div>
                     <div className="flex items-center justify-between gap-3">
@@ -134,6 +135,6 @@ export function AiVisibilityPanel() {
           </div>
         </div>
       </div>
-    </div>
+    </RevealSection>
   );
 }

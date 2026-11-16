@@ -1,7 +1,9 @@
 import {useState, type FormEvent} from 'react';
 import {CheckCircle2, Instagram, Mail, MapPin, MessageCircle, Send} from 'lucide-react';
 import {SeoHead} from '../components/SeoHead';
-import {BUSINESS_FACTS, PAGE_SEO} from '../data/business';
+import {StudioImage} from '../components/StudioImage';
+import {HeroEntrance, RevealSection} from '../components/MotionPrimitives';
+import {BUSINESS_FACTS, PAGE_SEO, STOCK_PHOTOS} from '../data/business';
 
 interface FormErrors {
   name?: string;
@@ -59,7 +61,7 @@ export function ContactPage() {
 
       <section className="py-16 sm:py-22">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
+          <HeroEntrance className="max-w-3xl">
             <p className="text-sm font-medium text-[#F59E0B]">Direct Contact</p>
             <h1 className="mt-3 font-display text-4xl sm:text-5xl font-bold tracking-tight text-[#F4F3EE] leading-[1.1]">
               Contact {BUSINESS_FACTS.businessName}
@@ -68,10 +70,20 @@ export function ContactPage() {
               Send a message on WhatsApp, email directly, or fill in the form below. Victor replies
               personally, and you will get a clear price before any work starts.
             </p>
-          </div>
+          </HeroEntrance>
 
-          <div className="mt-12 grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+          <RevealSection className="mt-12 grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
             <div className="lg:col-span-5 space-y-5">
+              <div className="group aspect-[16/10] rounded-xl overflow-hidden border border-[#2C2C28] bg-[#1C1C1A]">
+                <StudioImage
+                  src={STOCK_PHOTOS.warmWorkspace.src}
+                  fallbackSrc={STOCK_PHOTOS.warmWorkspace.fallbackSrc}
+                  alt={STOCK_PHOTOS.warmWorkspace.alt}
+                  eager
+                  className="w-full h-full object-cover group-hover:scale-[1.03]"
+                />
+              </div>
+
               <div className="bg-[#1C1C1A] border border-[#2C2C28] rounded-xl p-7 space-y-6">
                 <div>
                   <h2 className="font-display text-xl font-semibold text-[#F4F3EE]">
@@ -87,7 +99,7 @@ export function ContactPage() {
                   href={BUSINESS_FACTS.whatsappHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-2.5 px-5 py-3.5 rounded-md bg-[#F59E0B] hover:bg-[#D97706] text-[#141413] text-sm font-semibold transition-colors"
+                  className="w-full inline-flex items-center justify-center gap-2.5 px-5 py-3.5 rounded-md bg-[#F59E0B] hover:bg-[#D97706] hover:-translate-y-0.5 text-[#141413] text-sm font-semibold transition-all duration-200"
                 >
                   <MessageCircle className="w-4 h-4 shrink-0" aria-hidden="true" />
                   <span>WhatsApp: {BUSINESS_FACTS.whatsappDisplay}</span>
@@ -174,7 +186,7 @@ export function ContactPage() {
                         href={prefilledWhatsappLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-5 py-3 rounded-md bg-[#F59E0B] hover:bg-[#D97706] text-[#141413] text-sm font-semibold transition-colors"
+                        className="inline-flex items-center gap-2 px-5 py-3 rounded-md bg-[#F59E0B] hover:bg-[#D97706] hover:-translate-y-0.5 text-[#141413] text-sm font-semibold transition-all duration-200"
                       >
                         <MessageCircle className="w-4 h-4 shrink-0" aria-hidden="true" />
                         <span>Send via WhatsApp</span>
@@ -182,7 +194,7 @@ export function ContactPage() {
 
                       <a
                         href={mailtoLink}
-                        className="inline-flex items-center gap-2 px-5 py-3 rounded-md border border-[#2C2C28] bg-[#141413] hover:border-[#F59E0B] text-[#F4F3EE] text-sm font-medium transition-colors"
+                        className="inline-flex items-center gap-2 px-5 py-3 rounded-md border border-[#2C2C28] bg-[#141413] hover:border-[#F59E0B] hover:-translate-y-0.5 text-[#F4F3EE] text-sm font-medium transition-all duration-200"
                       >
                         <Mail className="w-4 h-4 text-[#F59E0B] shrink-0" aria-hidden="true" />
                         <span>Open in Email App</span>
@@ -279,7 +291,7 @@ export function ContactPage() {
 
                     <button
                       type="submit"
-                      className="inline-flex items-center gap-2 px-6 py-3.5 rounded-md bg-[#F59E0B] hover:bg-[#D97706] text-[#141413] text-sm font-semibold transition-colors cursor-pointer"
+                      className="inline-flex items-center gap-2 px-6 py-3.5 rounded-md bg-[#F59E0B] hover:bg-[#D97706] hover:-translate-y-0.5 text-[#141413] text-sm font-semibold transition-all duration-200 cursor-pointer"
                     >
                       <Send className="w-4 h-4 shrink-0" aria-hidden="true" />
                       <span>Prepare message for Victor</span>
@@ -288,7 +300,7 @@ export function ContactPage() {
                 )}
               </div>
             </div>
-          </div>
+          </RevealSection>
         </div>
       </section>
     </>

@@ -3,7 +3,8 @@ import {ArrowRight, Instagram, Mail, MapPin, MessageCircle} from 'lucide-react';
 import {SeoHead} from '../components/SeoHead';
 import {ContactCtaStrip} from '../components/ContactCtaStrip';
 import {StudioImage} from '../components/StudioImage';
-import {BUSINESS_FACTS, PAGE_SEO, SERVICE_LINKS, STUDIO_IMAGES} from '../data/business';
+import {HeroEntrance, RevealSection} from '../components/MotionPrimitives';
+import {BUSINESS_FACTS, PAGE_SEO, SERVICE_LINKS, STOCK_PHOTOS} from '../data/business';
 
 export function AboutPage() {
   return (
@@ -13,7 +14,7 @@ export function AboutPage() {
       <section className="py-16 sm:py-22">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-stretch">
-            <div className="lg:col-span-7 flex flex-col justify-center">
+            <HeroEntrance className="lg:col-span-7 flex flex-col justify-center">
               <p className="text-sm font-medium text-[#F59E0B]">
                 {BUSINESS_FACTS.businessName} · Founder &amp; Owner
               </p>
@@ -25,24 +26,26 @@ export function AboutPage() {
                 Nigeria, he works remotely for small businesses, brands and online sellers in the
                 UK and the US.
               </p>
-            </div>
+            </HeroEntrance>
 
-            <div className="lg:col-span-5">
-              <div className="h-full min-h-[250px] rounded-2xl overflow-hidden border border-[#2C2C28] bg-[#1C1C1A]">
+            <HeroEntrance delay={0.12} className="lg:col-span-5">
+              <div className="group h-full min-h-[250px] rounded-2xl overflow-hidden border border-[#2C2C28] bg-[#1C1C1A]">
                 <StudioImage
-                  src={STUDIO_IMAGES.heroWorkspace}
-                  alt="Victor Autocore remote production desk with monitor, camera, and warm amber lamp"
-                  className="w-full h-full object-cover"
+                  src={STOCK_PHOTOS.remoteDeskSetup.src}
+                  fallbackSrc={STOCK_PHOTOS.remoteDeskSetup.fallbackSrc}
+                  alt={STOCK_PHOTOS.remoteDeskSetup.alt}
+                  eager
+                  className="w-full h-full object-cover group-hover:scale-[1.03]"
                 />
               </div>
-            </div>
+            </HeroEntrance>
           </div>
         </div>
       </section>
 
       <section className="py-16 sm:py-20 border-t border-[#2C2C28]">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+          <RevealSection className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
             <div className="lg:col-span-7 space-y-8">
               <div>
                 <h2 className="font-display text-2xl sm:text-3xl font-semibold tracking-tight text-[#F4F3EE]">
@@ -82,6 +85,15 @@ export function AboutPage() {
             </div>
 
             <div className="lg:col-span-5 space-y-6">
+              <div className="group aspect-[16/10] rounded-xl overflow-hidden border border-[#2C2C28] bg-[#1C1C1A]">
+                <StudioImage
+                  src={STOCK_PHOTOS.editorTimelineDark.src}
+                  fallbackSrc={STOCK_PHOTOS.editorTimelineDark.fallbackSrc}
+                  alt={STOCK_PHOTOS.editorTimelineDark.alt}
+                  className="w-full h-full object-cover group-hover:scale-[1.03]"
+                />
+              </div>
+
               <div className="bg-[#1C1C1A] border border-[#2C2C28] rounded-xl p-7 space-y-5">
                 <h2 className="font-display text-xl font-semibold text-[#F4F3EE]">
                   Business details
@@ -163,7 +175,7 @@ export function AboutPage() {
                 </ul>
               </div>
             </div>
-          </div>
+          </RevealSection>
         </div>
       </section>
 

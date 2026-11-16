@@ -3,7 +3,8 @@ import {SeoHead} from '../components/SeoHead';
 import {FaqSection, type FaqItem} from '../components/FaqSection';
 import {ContactCtaStrip} from '../components/ContactCtaStrip';
 import {StudioImage} from '../components/StudioImage';
-import {BUSINESS_FACTS, PAGE_SEO, STUDIO_IMAGES} from '../data/business';
+import {HeroEntrance, RevealSection} from '../components/MotionPrimitives';
+import {BUSINESS_FACTS, PAGE_SEO, STOCK_PHOTOS} from '../data/business';
 
 const WEBSITE_FAQS: FaqItem[] = [
   {
@@ -52,7 +53,7 @@ export function WebsiteDesignPage() {
       <section className="py-16 sm:py-22">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-stretch">
-            <div className="lg:col-span-7 flex flex-col justify-center">
+            <HeroEntrance className="lg:col-span-7 flex flex-col justify-center">
               <p className="text-sm font-medium text-[#F59E0B]">
                 Service 05 · Websites, Landing Pages and Workflows
               </p>
@@ -70,30 +71,32 @@ export function WebsiteDesignPage() {
                   href={BUSINESS_FACTS.whatsappHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-md bg-[#F59E0B] hover:bg-[#D97706] text-[#141413] text-sm font-semibold transition-colors whitespace-nowrap shrink-0"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-md bg-[#F59E0B] hover:bg-[#D97706] hover:-translate-y-0.5 text-[#141413] text-sm font-semibold transition-all duration-200 whitespace-nowrap shrink-0"
                 >
                   <MessageCircle className="w-4 h-4 shrink-0" aria-hidden="true" />
                   <span>Discuss your website on WhatsApp</span>
                 </a>
               </div>
-            </div>
+            </HeroEntrance>
 
-            <div className="lg:col-span-5">
-              <div className="h-full min-h-[260px] rounded-xl overflow-hidden border border-[#2C2C28] bg-[#1C1C1A]">
+            <HeroEntrance delay={0.12} className="lg:col-span-5">
+              <div className="group h-full min-h-[260px] rounded-xl overflow-hidden border border-[#2C2C28] bg-[#1C1C1A]">
                 <StudioImage
-                  src={STUDIO_IMAGES.editorialWorkspace}
-                  alt="Minimalist dark workstation with laptop, notebook, and warm amber task light"
-                  className="w-full h-full object-cover"
+                  src={STOCK_PHOTOS.designerWebsiteScreen.src}
+                  fallbackSrc={STOCK_PHOTOS.designerWebsiteScreen.fallbackSrc}
+                  alt={STOCK_PHOTOS.designerWebsiteScreen.alt}
+                  eager
+                  className="w-full h-full object-cover group-hover:scale-[1.03]"
                 />
               </div>
-            </div>
+            </HeroEntrance>
           </div>
         </div>
       </section>
 
       <section className="py-16 sm:py-20 border-t border-[#2C2C28]">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl">
+          <RevealSection className="max-w-2xl">
             <h2 className="font-display text-2xl sm:text-3xl font-semibold tracking-tight text-[#F4F3EE]">
               Built the search way from day one
             </h2>
@@ -101,30 +104,29 @@ export function WebsiteDesignPage() {
               A good-looking site that nobody finds does not bring in customers. Every site is
               planned around clarity for buyers and structure for Google and AI search.
             </p>
-          </div>
+          </RevealSection>
 
           <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
-            {WEBSITE_PILLARS.map((pillar) => {
+            {WEBSITE_PILLARS.map((pillar, idx) => {
               const Icon = pillar.icon;
               return (
-                <div
-                  key={pillar.title}
-                  className="bg-[#1C1C1A] border border-[#2C2C28] rounded-xl p-7"
-                >
-                  <Icon className="w-5 h-5 text-[#F59E0B]" aria-hidden="true" />
-                  <h3 className="mt-4 font-display text-lg font-semibold text-[#F4F3EE]">
-                    {pillar.title}
-                  </h3>
-                  <p className="mt-2 text-sm sm:text-[15px] text-[#B3B2AB] leading-relaxed">
-                    {pillar.description}
-                  </p>
-                </div>
+                <RevealSection key={pillar.title} delay={idx * 0.05}>
+                  <div className="h-full bg-[#1C1C1A] border border-[#2C2C28] hover:border-[#40403A] hover:-translate-y-0.5 transition-all duration-200 rounded-xl p-7">
+                    <Icon className="w-5 h-5 text-[#F59E0B]" aria-hidden="true" />
+                    <h3 className="mt-4 font-display text-lg font-semibold text-[#F4F3EE]">
+                      {pillar.title}
+                    </h3>
+                    <p className="mt-2 text-sm sm:text-[15px] text-[#B3B2AB] leading-relaxed">
+                      {pillar.description}
+                    </p>
+                  </div>
+                </RevealSection>
               );
             })}
           </div>
 
-          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-[#1C1C1A] border border-[#2C2C28] rounded-xl p-7">
+          <RevealSection className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-[#1C1C1A] border border-[#2C2C28] hover:border-[#40403A] transition-colors rounded-xl p-7">
               <div className="flex items-center gap-2.5 text-[#F59E0B]">
                 <Check className="w-5 h-5" aria-hidden="true" />
                 <span className="text-sm font-medium">Plain copy included</span>
@@ -138,7 +140,7 @@ export function WebsiteDesignPage() {
               </p>
             </div>
 
-            <div className="bg-[#1C1C1A] border border-[#2C2C28] rounded-xl p-7">
+            <div className="bg-[#1C1C1A] border border-[#2C2C28] hover:border-[#40403A] transition-colors rounded-xl p-7">
               <div className="flex items-center gap-2.5 text-[#F59E0B]">
                 <Workflow className="w-5 h-5" aria-hidden="true" />
                 <span className="text-sm font-medium">Optional workflow setup</span>
@@ -151,7 +153,7 @@ export function WebsiteDesignPage() {
                 notifications automatically, n8n workflows can be built alongside the site.
               </p>
             </div>
-          </div>
+          </RevealSection>
         </div>
       </section>
 

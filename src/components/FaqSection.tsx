@@ -1,5 +1,7 @@
 import {useState} from 'react';
+import {AnimatePresence, motion} from 'motion/react';
 import {ChevronDown} from 'lucide-react';
+import {RevealSection} from './MotionPrimitives';
 
 export interface FaqItem {
   question: string;
@@ -17,7 +19,7 @@ export function FaqSection({title = 'Questions people ask', items}: FaqSectionPr
   return (
     <section className="py-16 sm:py-22 border-t border-[#2C2C28]">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
+        <RevealSection className="grid grid-cols-1 lg:grid-cols-12 gap-10">
           <div className="lg:col-span-4">
             <p className="text-sm font-medium text-[#F59E0B]">FAQ</p>
             <h2 className="mt-2 font-display text-2xl sm:text-3xl font-semibold tracking-tight text-[#F4F3EE]">
@@ -36,7 +38,7 @@ export function FaqSection({title = 'Questions people ask', items}: FaqSectionPr
               return (
                 <div
                   key={item.question}
-                  className={`rounded-xl border transition-colors ${
+                  className={`rounded-xl border transition-colors duration-200 ${
                     isOpen
                       ? 'bg-[#1C1C1A] border-[#F59E0B]'
                       : 'bg-[#181816] border-[#2C2C28] hover:border-[#40403A]'
@@ -57,24 +59,34 @@ export function FaqSection({title = 'Questions people ask', items}: FaqSectionPr
                       </span>
                     </div>
                     <ChevronDown
-                      className={`w-5 h-5 text-[#F59E0B] shrink-0 mt-1 transition-transform duration-150 ${
+                      className={`w-5 h-5 text-[#F59E0B] shrink-0 mt-1 transition-transform duration-200 ${
                         isOpen ? 'rotate-180' : ''
                       }`}
                       aria-hidden="true"
                     />
                   </button>
-                  {isOpen && (
-                    <div className="px-6 pb-5 pt-1 pl-14 border-t border-[#2C2C28]/70">
-                      <p className="mt-3 text-[15px] sm:text-base text-[#B3B2AB] leading-relaxed">
-                        {item.answer}
-                      </p>
-                    </div>
-                  )}
+
+                  <AnimatePresence initial={false}>
+                    {isOpen && (
+                      <motion.div
+                        key="content"
+                        initial={{opacity: 0.05, y: -6}}
+                        animate={{opacity: 1, y: 0}}
+                        exit={{opacity: 0, y: -4}}
+                        transition={{duration: 0.22, ease: [0.16, 1, 0.3, 1]}}
+                        className="px-6 pb-5 pt-1 pl-14 border-t border-[#2C2C28]/70"
+                      >
+                        <p className="mt-3 text-[15px] sm:text-base text-[#B3B2AB] leading-relaxed">
+                          {item.answer}
+                        </p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
               );
             })}
           </div>
-        </div>
+        </RevealSection>
       </div>
     </section>
   );

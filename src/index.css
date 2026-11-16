@@ -46,9 +46,31 @@
   font-style: italic;
 }
 
+@keyframes studio-marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-studio-marquee {
+  animation: studio-marquee 42s linear infinite;
+  will-change: transform;
+}
+
+.group:hover .animate-studio-marquee {
+  animation-play-state: paused;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+  .animate-studio-marquee {
+    animation: none !important;
+    transform: none !important;
   }
   *,
   *::before,

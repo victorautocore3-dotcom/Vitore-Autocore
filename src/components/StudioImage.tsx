@@ -1,35 +1,48 @@
-import {useState} from 'react';
-import {Film} from 'lucide-react';
+import {useEffect, useState} from 'react';
 
 interface StudioImageProps {
   src: string;
+  fallbackSrc?: string;
   alt: string;
   className?: string;
+  eager?: boolean;
 }
 
-export function StudioImage({src, alt, className = ''}: StudioImageProps) {
-  const [hasError, setHasError] = useState(false);
+const DEFAULT_BACKUP_PHOTO =
+  'https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?auto=format&fit=crop&w=1200&q=80';
 
-  if (hasError) {
-    return (
-      <div
-        role="img"
-        aria-label={alt}
-        className={`flex flex-col items-center justify-center gap-3 bg-[#1C1C1A] border border-[#2C2C28] text-[#85847E] p-8 ${className}`}
-      >
-        <Film className="w-8 h-8 text-[#F59E0B]" aria-hidden="true" />
-        <span className="text-xs text-center max-w-xs">{alt}</span>
-      </div>
-    );
+export function StudioImage({
+  src,
+  fallbackSrc = DEFAULT_BACKUP_PHOTO,
+  alt,
+  className = '',
+  eager = false,
+}: StudioImageProps) {
+  const [currentSrc, setCurrentSrc] = useState(src);
+  const [triedFallback, setTriedFallback] = useState(false);
+
+  useEffect(() => {
+    setCurrentSrc(src);
+    setTriedFallback(false);
+  }, [src]);
+
+  function handleError() {
+    if (!triedFallback && fallbackSrc && currentSrc !== fallbackSrc) {
+      setTriedFallback(true);
+      setCurrentSrc(fallbackSrc);
+    } else if (currentSrc !== DEFAULT_BACKUP_PHOTO) {
+      setCurrentSrc(DEFAULT_BACKUP_PHOTO);
+    }
   }
 
   return (
     <img
-      src={src}
+      src={currentSrc}
       alt={alt}
       referrerPolicy="no-referrer"
-      onError={() => setHasError(true)}
-      className={className}
+      loading={eager ? 'eager' : 'lazy'}
+      onError={handleError}
+      className={`${className} transition-transform duration-500 ease-out will-change-transform`}
     />
   );
 }
