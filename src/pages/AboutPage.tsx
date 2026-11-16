@@ -28,14 +28,12 @@ export function AboutPage() {
               </p>
             </HeroEntrance>
 
-            <HeroEntrance delay={0.12} className="lg:col-span-5">
-              <div className="group h-full min-h-[250px] rounded-2xl overflow-hidden border border-[#2C2C28] bg-[#1C1C1A]">
-                <StudioImage
-                  src={STOCK_PHOTOS.remoteDeskSetup.src}
-                  fallbackSrc={STOCK_PHOTOS.remoteDeskSetup.fallbackSrc}
-                  alt={STOCK_PHOTOS.remoteDeskSetup.alt}
-                  eager
-                  className="w-full h-full object-cover group-hover:scale-[1.03]"
+            <HeroEntrance delay={0.12} className="lg:col-span-5 flex items-center">
+              <div className="group w-full max-w-[380px] aspect-square mx-auto lg:ml-auto lg:mr-0 rounded-2xl overflow-hidden border border-[#2C2C28] bg-[#1C1C1A]">
+                <img
+                  src="/victor-about.jpg"
+                  alt="Akinjide Akinola, founder of Victor Autocore"
+                  className="w-full h-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.03]"
                 />
               </div>
             </HeroEntrance>

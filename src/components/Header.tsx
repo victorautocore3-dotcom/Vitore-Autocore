@@ -41,9 +41,13 @@ export function Header() {
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-8">
         <Link
           to="/"
-          className="font-display text-lg font-bold tracking-tight text-[#F4F3EE] hover:text-[#F59E0B] transition-colors whitespace-nowrap shrink-0"
+          className="inline-flex items-center shrink-0"
         >
-          {BUSINESS_FACTS.businessName}
+          <img
+            src="/logo.svg"
+            alt={BUSINESS_FACTS.businessName}
+            className="h-9 sm:h-10 w-auto block"
+          />
         </Link>
 
         <nav

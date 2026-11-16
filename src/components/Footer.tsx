@@ -10,9 +10,13 @@ export function Footer() {
           <div className="md:col-span-5 space-y-4">
             <Link
               to="/"
-              className="inline-block font-display text-xl font-bold tracking-tight text-[#F4F3EE] hover:text-[#F59E0B] transition-colors"
+              className="inline-flex items-center shrink-0"
             >
-              {BUSINESS_FACTS.businessName}
+              <img
+                src="/logo.svg"
+                alt={BUSINESS_FACTS.businessName}
+                className="h-9 sm:h-10 w-auto block"
+              />
             </Link>
             <p className="text-sm text-[#B3B2AB] leading-relaxed max-w-md">
               Owner: {BUSINESS_FACTS.ownerFullName}, known as {BUSINESS_FACTS.ownerKnownAs}.
