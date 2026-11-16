@@ -1,5 +1,5 @@
 import {useEffect, useRef, type ReactNode} from 'react';
-import {animate, stagger, useReducedMotion} from 'framer-motion';
+import {AnimatePresence, animate, motion, stagger, useReducedMotion} from 'framer-motion';
 
 function getStaggerTargets(container: HTMLElement): HTMLElement[] {
   const directChildren = Array.from(container.children).filter(
@@ -21,6 +21,61 @@ function resetElements(elements: HTMLElement[]) {
     el.style.opacity = '1';
     el.style.transform = 'none';
   }
+}
+
+interface PageTransitionProps {
+  routeKey: string;
+  children: ReactNode;
+}
+
+/**
+ * Global page transition wrapper that triggers a soft cross-fade when navigating between routes.
+ * Respects prefers-reduced-motion and ensures main content remains visible and accessible at all times.
+ */
+export function PageTransition({routeKey, children}: PageTransitionProps) {
+  const shouldReduceMotion = useReducedMotion();
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el || shouldReduceMotion) {
+      if (el) {
+        el.style.opacity = '1';
+      }
+      return;
+    }
+
+    const controls = animate(
+      el,
+      {opacity: [0.18, 1]},
+      {duration: 0.26, ease: [0.16, 1, 0.3, 1]}
+    );
+
+    return () => {
+      controls.stop();
+      if (el) {
+        el.style.opacity = '1';
+      }
+    };
+  }, [routeKey, shouldReduceMotion]);
+
+  return (
+    <AnimatePresence mode="wait" initial={false}>
+      <motion.div
+        key={routeKey}
+        ref={containerRef}
+        initial={shouldReduceMotion ? false : {opacity: 0.18}}
+        animate={{opacity: 1}}
+        exit={shouldReduceMotion ? {opacity: 1} : {opacity: 0.18}}
+        transition={{
+          duration: shouldReduceMotion ? 0 : 0.2,
+          ease: [0.16, 1, 0.3, 1],
+        }}
+      >
+        {children}
+      </motion.div>
+    </AnimatePresence>
+  );
 }
 
 interface HeroEntranceProps {
