@@ -1,46 +1,77 @@
 import {useEffect, useRef, type ReactNode} from 'react';
-import {animate} from 'motion/react';
+import {animate, stagger, useReducedMotion} from 'framer-motion';
 
-function prefersReducedMotion(): boolean {
-  if (typeof window === 'undefined' || !window.matchMedia) {
-    return false;
+function getStaggerTargets(container: HTMLElement): HTMLElement[] {
+  const directChildren = Array.from(container.children).filter(
+    (node): node is HTMLElement => node instanceof HTMLElement
+  );
+  if (directChildren.length > 1) {
+    return directChildren;
   }
-  return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const nestedTargets = Array.from(
+    container.querySelectorAll<HTMLElement>(
+      ':scope > div > h1, :scope > div > h2, :scope > div > p, :scope > div > div, :scope > h1, :scope > h2, :scope > p'
+    )
+  );
+  return nestedTargets.length > 1 ? nestedTargets : [container];
+}
+
+function resetElements(elements: HTMLElement[]) {
+  for (const el of elements) {
+    el.style.opacity = '1';
+    el.style.transform = 'none';
+  }
 }
 
 interface HeroEntranceProps {
   children: ReactNode;
   delay?: number;
+  staggerChildren?: number;
   className?: string;
 }
 
 /**
- * Animates hero elements on mount with fade + rise (transform & opacity only).
- * Always settles at opacity: 1 and transform: none, and stays visible if JS or motion is disabled.
+ * Staggered fade-and-rise entrance animation for hero headers and content containers.
+ * Respects prefers-reduced-motion via framer-motion's useReducedMotion hook and never leaves elements hidden.
  */
-export function HeroEntrance({children, delay = 0, className = ''}: HeroEntranceProps) {
+export function HeroEntrance({
+  children,
+  delay = 0,
+  staggerChildren = 0.08,
+  className = '',
+}: HeroEntranceProps) {
   const ref = useRef<HTMLDivElement>(null);
+  const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
     const el = ref.current;
-    if (!el || prefersReducedMotion()) {
+    if (!el) {
+      return;
+    }
+
+    const targets = getStaggerTargets(el);
+    if (shouldReduceMotion) {
+      resetElements(targets);
+      resetElements([el]);
       return;
     }
 
     const controls = animate(
-      el,
-      {opacity: [0.05, 1], y: [14, 0]},
-      {duration: 0.55, delay, ease: [0.16, 1, 0.3, 1]}
+      targets,
+      {opacity: [0.08, 1], y: [16, 0]},
+      {
+        duration: 0.52,
+        delay: stagger(staggerChildren, {startDelay: delay}),
+        ease: [0.16, 1, 0.3, 1],
+      }
     );
 
     return () => {
       controls.stop();
-      if (el) {
-        el.style.opacity = '1';
-        el.style.transform = 'none';
-      }
+      resetElements(targets);
+      resetElements([el]);
     };
-  }, [delay]);
+  }, [delay, staggerChildren, shouldReduceMotion]);
 
   return (
     <div ref={ref} className={className}>
@@ -52,25 +83,33 @@ export function HeroEntrance({children, delay = 0, className = ''}: HeroEntrance
 interface RevealSectionProps {
   children: ReactNode;
   delay?: number;
+  staggerChildren?: number;
   className?: string;
 }
 
 /**
- * Scroll-reveal wrapper that NEVER sits at opacity: 0 waiting for a trigger.
- * Elements are fully visible in the DOM at rest; when scrolled into view from below,
- * they gently fade and rise using transform and opacity only.
+ * Staggered scroll-reveal wrapper for primary section headers and content containers.
+ * Respects prefers-reduced-motion and guarantees elements remain visible at rest.
  */
-export function RevealSection({children, delay = 0, className = ''}: RevealSectionProps) {
+export function RevealSection({
+  children,
+  delay = 0,
+  staggerChildren = 0.07,
+  className = '',
+}: RevealSectionProps) {
   const ref = useRef<HTMLDivElement>(null);
+  const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
     const el = ref.current;
-    if (!el || prefersReducedMotion()) {
+    if (!el) {
       return;
     }
 
-    const rect = el.getBoundingClientRect();
-    if (rect.top <= window.innerHeight * 0.96) {
+    const targets = getStaggerTargets(el);
+    if (shouldReduceMotion) {
+      resetElements(targets);
+      resetElements([el]);
       return;
     }
 
@@ -83,11 +122,25 @@ export function RevealSection({children, delay = 0, className = ''}: RevealSecti
       }
       hasAnimated = true;
       activeControls = animate(
-        el,
-        {opacity: [0.15, 1], y: [18, 0]},
-        {duration: 0.55, delay, ease: [0.16, 1, 0.3, 1]}
+        targets,
+        {opacity: [0.12, 1], y: [18, 0]},
+        {
+          duration: 0.52,
+          delay: stagger(staggerChildren, {startDelay: delay}),
+          ease: [0.16, 1, 0.3, 1],
+        }
       );
     };
+
+    const rect = el.getBoundingClientRect();
+    if (rect.top <= window.innerHeight * 0.92) {
+      triggerReveal();
+      return () => {
+        activeControls?.stop();
+        resetElements(targets);
+        resetElements([el]);
+      };
+    }
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -99,7 +152,7 @@ export function RevealSection({children, delay = 0, className = ''}: RevealSecti
           }
         }
       },
-      {threshold: 0.02, rootMargin: '40px 0px -10px 0px'}
+      {threshold: 0.05, rootMargin: '30px 0px -10px 0px'}
     );
 
     observer.observe(el);
@@ -107,12 +160,10 @@ export function RevealSection({children, delay = 0, className = ''}: RevealSecti
     return () => {
       observer.disconnect();
       activeControls?.stop();
-      if (el) {
-        el.style.opacity = '1';
-        el.style.transform = 'none';
-      }
+      resetElements(targets);
+      resetElements([el]);
     };
-  }, [delay]);
+  }, [delay, staggerChildren, shouldReduceMotion]);
 
   return (
     <div ref={ref} className={className}>

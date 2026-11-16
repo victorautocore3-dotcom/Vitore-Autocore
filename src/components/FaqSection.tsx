@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import {AnimatePresence, motion} from 'motion/react';
+import {AnimatePresence, motion, useReducedMotion} from 'framer-motion';
 import {ChevronDown} from 'lucide-react';
 import {RevealSection} from './MotionPrimitives';
 
@@ -15,6 +15,7 @@ interface FaqSectionProps {
 
 export function FaqSection({title = 'Questions people ask', items}: FaqSectionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const shouldReduceMotion = useReducedMotion();
 
   return (
     <section className="py-16 sm:py-22 border-t border-[#2C2C28]">
@@ -31,7 +32,7 @@ export function FaqSection({title = 'Questions people ask', items}: FaqSectionPr
             </p>
           </div>
 
-          <div className="lg:col-span-8 space-y-3">
+          <RevealSection delay={0.06} className="lg:col-span-8 space-y-3">
             {items.map((item, idx) => {
               const isOpen = openIndex === idx;
               const numLabel = String(idx + 1).padStart(2, '0');
@@ -70,10 +71,10 @@ export function FaqSection({title = 'Questions people ask', items}: FaqSectionPr
                     {isOpen && (
                       <motion.div
                         key="content"
-                        initial={{opacity: 0.05, y: -6}}
+                        initial={shouldReduceMotion ? false : {opacity: 0.08, y: -6}}
                         animate={{opacity: 1, y: 0}}
-                        exit={{opacity: 0, y: -4}}
-                        transition={{duration: 0.22, ease: [0.16, 1, 0.3, 1]}}
+                        exit={shouldReduceMotion ? {opacity: 1, y: 0} : {opacity: 0, y: -4}}
+                        transition={{duration: shouldReduceMotion ? 0 : 0.22, ease: [0.16, 1, 0.3, 1]}}
                         className="px-6 pb-5 pt-1 pl-14 border-t border-[#2C2C28]/70"
                       >
                         <p className="mt-3 text-[15px] sm:text-base text-[#B3B2AB] leading-relaxed">
@@ -85,7 +86,7 @@ export function FaqSection({title = 'Questions people ask', items}: FaqSectionPr
                 </div>
               );
             })}
-          </div>
+          </RevealSection>
         </RevealSection>
       </div>
     </section>

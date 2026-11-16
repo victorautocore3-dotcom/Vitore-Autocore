@@ -82,7 +82,7 @@ export function AiVisibilityPanel() {
           <p className="text-xs font-medium uppercase tracking-wider text-[#85847E]">
             AI tools checked during setup
           </p>
-          <div className="mt-3 grid grid-cols-2 lg:grid-cols-4 gap-3">
+          <RevealSection className="mt-3 grid grid-cols-2 lg:grid-cols-4 gap-3">
             {AI_ENGINES.map((engine) => (
               <div
                 key={engine.name}
@@ -97,14 +97,14 @@ export function AiVisibilityPanel() {
                 <p className="text-xs text-[#85847E] leading-snug">{engine.role}</p>
               </div>
             ))}
-          </div>
+          </RevealSection>
         </div>
 
         <div className="border-t border-[#2C2C28] pt-7">
           <p className="text-xs font-medium uppercase tracking-wider text-[#85847E]">
             Six factors inspected on every business
           </p>
-          <div className="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <RevealSection delay={0.05} className="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {CHECKLIST_FACTORS.map((factor) => {
               const Icon = factor.icon;
               return (
@@ -132,7 +132,7 @@ export function AiVisibilityPanel() {
                 </div>
               );
             })}
-          </div>
+          </RevealSection>
         </div>
       </div>
     </RevealSection>

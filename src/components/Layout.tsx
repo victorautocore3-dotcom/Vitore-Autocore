@@ -1,5 +1,5 @@
 import type {ReactNode} from 'react';
-import {MotionConfig} from 'motion/react';
+import {MotionConfig} from 'framer-motion';
 import {Header} from './Header';
 import {ServiceMarquee} from './ServiceMarquee';
 import {Footer} from './Footer';
