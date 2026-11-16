@@ -1,0 +1,8 @@
+{
+  "name": "Victor Autocore",
+  "description": "AI video adverts, social media management, store fixes and Google visibility setup (SEO, AEO, GEO) for small businesses and online sellers in the UK and US.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
