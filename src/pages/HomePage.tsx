@@ -4,9 +4,9 @@ import {useReducedMotion} from 'framer-motion';
 import {
   ArrowRight,
   Calendar,
+  Check,
   Film,
   MessageCircle,
-  Quote,
   Search,
   Store,
   Workflow,
@@ -77,87 +77,11 @@ const GUIDE_CARDS = [
   },
 ];
 
-const CLIENT_REVIEW_CARDS = [
-  {
-    slot: '01',
-    service: 'AI Video Ads and Reels',
-    quote:
-      'I sent over five product photos from my phone and Victor turned them into a clean Reel with captions and voiceover. I liked that I did not have to set up lights or film anything myself.',
-    author: 'Hannah M.',
-    detail: 'Handmade candle & home fragrance shop · Manchester, UK',
-  },
-  {
-    slot: '02',
-    service: 'Social Media Management',
-    quote:
-      'Having the whole month of Instagram and TikTok posts planned in advance took a weight off my shoulders. I liked being able to check and approve every caption before anything went live.',
-    author: 'Marcus T.',
-    detail: 'Independent fitness studio · Austin, US',
-  },
-  {
-    slot: '03',
-    service: 'Store Setup and Fixes',
-    quote:
-      'People were clicking my bio link and leaving without buying. Victor reordered my Stan Store, rewrote the product descriptions in plain English, and fixed a broken checkout link I had missed.',
-    author: 'Chloe R.',
-    detail: 'Digital templates & notion planner seller · London, UK',
-  },
-  {
-    slot: '04',
-    service: 'Google Visibility Setup (SEO, AEO & GEO)',
-    quote:
-      'What I liked most was the clear before-and-after breakdown. Victor tidied up our Google Business Profile, added proper FAQ answers to our pages, and made sure our business details matched everywhere.',
-    author: 'David K.',
-    detail: 'Local electrical & home repair company · Birmingham, UK',
-  },
-  {
-    slot: '05',
-    service: 'Website and App Design',
-    quote:
-      'Our old site was slow and confusing on mobile phones. Victor built a straightforward new website where customers can read what we do and message us on WhatsApp or email in one tap.',
-    author: 'Rachel S.',
-    detail: 'Boutique skincare brand · Chicago, US',
-  },
-  {
-    slot: '06',
-    service: 'n8n Automation',
-    quote:
-      'Before working with Victor, I was copying every website enquiry into a spreadsheet by hand. He connected our form straight to our email and tracking sheet with n8n so nothing gets missed.',
-    author: 'Daniel O.',
-    detail: 'Property maintenance & cleaning service · Leeds, UK',
-  },
-  {
-    slot: '07',
-    service: 'AI Video Ads and Reels',
-    quote:
-      'The UGC-style video adverts felt natural and matched the tone of our brand right away. I liked how fast the revisions were and how clearly Victor explained the hook at the start of each video.',
-    author: 'Lauren P.',
-    detail: 'Online pet accessories store · Denver, US',
-  },
-  {
-    slot: '08',
-    service: 'Social Media Management',
-    quote:
-      'Our pages used to go quiet whenever the shop got busy. Victor keeps our Facebook and Instagram active every week with posts that actually sound like us rather than generic filler.',
-    author: 'Sophie W.',
-    detail: 'Independent bakery & custom cakes · Bristol, UK',
-  },
-  {
-    slot: '09',
-    service: 'Store Setup and Fixes',
-    quote:
-      'Victor reviewed my Gumroad and Beacons pages like a first-time buyer and pointed out exactly why people were hesitating. The new cover graphics and clearer product titles made the whole store look trustworthy.',
-    author: 'Jason B.',
-    detail: 'Online photography presets & courses · Seattle, US',
-  },
-  {
-    slot: '10',
-    service: 'Google Visibility Setup (SEO, AEO & GEO)',
-    quote:
-      'I had no idea how AI search tools or schema worked before we spoke. Victor explained everything without jargon, updated our site structure, and showed us the follow-up checks three weeks later.',
-    author: 'Amara N.',
-    detail: 'Private physiotherapy clinic · Surrey, UK',
-  },
+const HOW_I_WORK_POINTS = [
+  'Fixed price agreed before any work starts, no surprises after',
+  'Half to start, half when the work is finished and live',
+  'Before and after screenshots on every setup, so you can see the change yourself',
+  'You deal with me directly from the first message to the finished work, nothing is outsourced',
 ];
 
 const HERO_SLIDES = [
@@ -435,53 +359,25 @@ export function HomePage() {
         </div>
       </section>
 
-      <section id="client-reviews" className="py-16 sm:py-24 border-t border-[#2C2C28]">
+      <section className="py-16 sm:py-24 border-t border-[#2C2C28]">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-          <RevealSection className="max-w-2xl">
-            <p className="text-sm font-medium text-[#F59E0B]">Feedback</p>
-            <h2 className="mt-2 font-display text-3xl sm:text-4xl font-bold tracking-tight text-[#F4F3EE]">
-              Client reviews
+          <RevealSection>
+            <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-[#F4F3EE]">
+              How I work
             </h2>
-            <p className="mt-3 text-base text-[#B3B2AB] leading-relaxed">
-              Direct feedback from small businesses, brands and online sellers in the UK and the US.
-            </p>
+
+            <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-5">
+              {HOW_I_WORK_POINTS.map((point) => (
+                <div
+                  key={point}
+                  className="bg-[#1C1C1A] border border-[#2C2C28] hover:border-[#40403A] transition-colors duration-200 rounded-2xl p-6 sm:p-7 flex items-start gap-4"
+                >
+                  <Check className="w-5 h-5 text-[#F59E0B] shrink-0 mt-0.5" aria-hidden="true" />
+                  <p className="text-base text-[#F4F3EE] leading-relaxed">{point}</p>
+                </div>
+              ))}
+            </div>
           </RevealSection>
-
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
-            {CLIENT_REVIEW_CARDS.map((review, index) => (
-              <RevealSection key={review.slot} delay={(index % 2) * 0.05} className="h-full">
-                <article className="h-full bg-[#1C1C1A] border border-[#2C2C28] hover:border-[#40403A] hover:-translate-y-0.5 transition-all duration-200 rounded-2xl p-6 sm:p-8 flex flex-col justify-between gap-6">
-                  <div>
-                    <div className="flex items-center justify-between gap-3">
-                      <span className="inline-flex items-center gap-2 text-xs font-medium text-[#F59E0B]">
-                        <Quote className="w-4 h-4 shrink-0" aria-hidden="true" />
-                        <span>Review {review.slot}</span>
-                      </span>
-                      <span className="px-2.5 py-1 rounded-md border border-[#2C2C28] bg-[#141413] text-xs font-medium text-[#B3B2AB]">
-                        {review.service}
-                      </span>
-                    </div>
-
-                    <blockquote className="mt-5 text-base text-[#F4F3EE] leading-relaxed">
-                      &ldquo;{review.quote}&rdquo;
-                    </blockquote>
-                  </div>
-
-                  <div className="pt-4 border-t border-[#2C2C28] flex items-center justify-between gap-4">
-                    <div>
-                      <p className="font-display text-sm font-semibold text-[#F4F3EE]">
-                        {review.author}
-                      </p>
-                      <p className="mt-0.5 text-xs text-[#85847E]">{review.detail}</p>
-                    </div>
-                    <span className="font-display text-xs font-semibold text-[#F59E0B] tabular-nums">
-                      #{review.slot}
-                    </span>
-                  </div>
-                </article>
-              </RevealSection>
-            ))}
-          </div>
         </div>
       </section>
 
