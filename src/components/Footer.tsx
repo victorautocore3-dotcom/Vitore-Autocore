@@ -1,5 +1,5 @@
 import {Link} from 'react-router-dom';
-import {Instagram, Mail, MapPin, MessageCircle} from 'lucide-react';
+import {Instagram, Mail, MessageCircle} from 'lucide-react';
 import {BUSINESS_FACTS, SERVICE_LINKS} from '../data/business';
 
 export function Footer() {
@@ -18,13 +18,6 @@ export function Footer() {
                 className="h-9 sm:h-10 w-auto block"
               />
             </Link>
-            <p className="text-sm text-[#B3B2AB] leading-relaxed max-w-md">
-              Owner: {BUSINESS_FACTS.ownerFullName}, known as {BUSINESS_FACTS.ownerKnownAs}.
-            </p>
-            <p className="text-sm text-[#B3B2AB] leading-relaxed flex items-start gap-2 max-w-md">
-              <MapPin className="w-4 h-4 text-[#F59E0B] shrink-0 mt-1" aria-hidden="true" />
-              <span>{BUSINESS_FACTS.serviceAreaStatement}</span>
-            </p>
           </div>
 
           <div className="md:col-span-4 space-y-3">

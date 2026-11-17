@@ -180,7 +180,7 @@ export function HomePage() {
         <div className="relative z-30 w-full max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <HeroEntrance className="max-w-3xl">
             <p className="text-sm font-medium text-[#F59E0B] tracking-wide">
-              Victor Autocore · Lagos, Nigeria · UK &amp; US Clients
+              Victor Autocore
             </p>
 
             <h1 className="mt-4 font-display text-4xl sm:text-5xl lg:text-[3.85rem] font-bold tracking-tight text-[#F4F3EE] leading-[1.06]">
@@ -441,9 +441,8 @@ export function HomePage() {
                 <span className="font-serif-accent font-normal text-[#F59E0B]">recommended.</span>
               </h2>
               <p className="mt-7 text-base sm:text-lg text-[#B3B2AB] leading-relaxed max-w-2xl">
-                All work is done remotely from Lagos for clients in the UK and the US. You work
-                directly with {BUSINESS_FACTS.ownerFullName}, known as {BUSINESS_FACTS.ownerKnownAs}
-                , from your first message to the finished work.
+                All work is done remotely. You work directly with Akinjide Akinola, known as Victor,
+                from your first message to the finished work.
               </p>
               <Link
                 to="/about"
