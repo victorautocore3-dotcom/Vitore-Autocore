@@ -62,6 +62,28 @@ const PRODUCTION_GALLERY = [
   STOCK_PHOTOS.editingTimelineScreen,
 ];
 
+const SAMPLE_ADVERTS = [
+  {
+    src: '/videos/sample-phone-qa.mp4',
+    poster: '/videos/poster-phone-qa.jpg',
+    title: 'Phone Q&A promo',
+    description:
+      'A talking character advert that answers the questions online sellers get every day.',
+  },
+  {
+    src: '/videos/sample-earth-zoom.mp4',
+    poster: '/videos/poster-earth-zoom.jpg',
+    title: 'Earth Zoom',
+    description: 'A cinematic advert about the store buyers cannot find.',
+  },
+  {
+    src: '/videos/sample-invisible-store.mp4',
+    poster: '/videos/poster-invisible-store.jpg',
+    title: 'The Invisible Store',
+    description: 'A short story advert about good products nobody could find.',
+  },
+];
+
 export function AiVideoAdsPage() {
   return (
     <>
@@ -106,6 +128,48 @@ export function AiVideoAdsPage() {
               </div>
             </HeroEntrance>
           </div>
+        </div>
+      </section>
+
+      <section className="py-16 sm:py-22 border-t border-[#2C2C28] bg-[#161614]">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+          <RevealSection className="max-w-2xl">
+            <p className="text-sm font-medium text-[#F59E0B]">Video Showcase</p>
+            <h2 className="mt-2 font-display text-3xl sm:text-4xl font-bold tracking-tight text-[#F4F3EE]">
+              Sample adverts
+            </h2>
+          </RevealSection>
+
+          <RevealSection
+            delay={0.05}
+            className="mt-10 grid grid-cols-1 lg:grid-cols-3 gap-8"
+          >
+            {SAMPLE_ADVERTS.map((sample) => (
+              <article
+                key={sample.src}
+                className="bg-[#1C1C1A] border border-[#2C2C28] hover:border-[#40403A] transition-colors duration-200 rounded-2xl p-4 sm:p-5 flex flex-col"
+              >
+                <div className="rounded-xl overflow-hidden border border-[#2C2C28] bg-[#141413]">
+                  <video
+                    src={sample.src}
+                    poster={sample.poster}
+                    controls
+                    playsInline
+                    preload="none"
+                    className="w-full aspect-[9/16] object-cover block"
+                  />
+                </div>
+                <div className="mt-5 px-1">
+                  <h3 className="font-display text-xl font-semibold text-[#F4F3EE]">
+                    {sample.title}
+                  </h3>
+                  <p className="mt-2 text-sm text-[#B3B2AB] leading-relaxed">
+                    {sample.description}
+                  </p>
+                </div>
+              </article>
+            ))}
+          </RevealSection>
         </div>
       </section>
 
