@@ -1,4 +1,6 @@
+import {useEffect, useState} from 'react';
 import {Link} from 'react-router-dom';
+import {useReducedMotion} from 'framer-motion';
 import {
   ArrowRight,
   Calendar,
@@ -158,85 +160,136 @@ const CLIENT_REVIEW_CARDS = [
   },
 ];
 
+const HERO_SLIDES = [
+  {
+    ...STOCK_PHOTOS.gimbalMicShoot,
+    objectPositionClass: 'object-[62%_center] sm:object-center',
+  },
+  {
+    ...STOCK_PHOTOS.editorTimelineDark,
+    objectPositionClass: 'object-center',
+  },
+  {
+    ...STOCK_PHOTOS.gimbalStudioRig,
+    objectPositionClass: 'object-center',
+  },
+  {
+    ...STOCK_PHOTOS.onlineStoreLaptopPhone,
+    objectPositionClass: 'object-[58%_center] sm:object-center',
+  },
+  {
+    ...STOCK_PHOTOS.designerWebsiteScreen,
+    objectPositionClass: 'object-center',
+  },
+];
+
 export function HomePage() {
+  const shouldReduceMotion = useReducedMotion();
+  const [activeSlide, setActiveSlide] = useState(0);
+  const [prevSlide, setPrevSlide] = useState<number | null>(null);
+  const [unlockedSlides, setUnlockedSlides] = useState<number[]>([0]);
+
+  useEffect(() => {
+    if (shouldReduceMotion) {
+      setActiveSlide(0);
+      setPrevSlide(null);
+      setUnlockedSlides([0]);
+      return;
+    }
+
+    const preloadTimer = window.setTimeout(() => {
+      setUnlockedSlides((prev) => {
+        const nextIndex = (activeSlide + 1) % HERO_SLIDES.length;
+        return prev.includes(nextIndex) ? prev : [...prev, nextIndex];
+      });
+    }, 1200);
+
+    const rotateTimer = window.setTimeout(() => {
+      setPrevSlide(activeSlide);
+      setActiveSlide((prev) => (prev + 1) % HERO_SLIDES.length);
+    }, 3000);
+
+    return () => {
+      window.clearTimeout(preloadTimer);
+      window.clearTimeout(rotateTimer);
+    };
+  }, [activeSlide, shouldReduceMotion]);
+
   return (
     <>
       <SeoHead seo={PAGE_SEO.home} />
 
-      <section className="py-14 sm:py-20 lg:py-24">
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-            <HeroEntrance className="lg:col-span-7">
-              <p className="text-sm font-medium text-[#F59E0B] tracking-wide">
-                Victor Autocore · Lagos, Nigeria · UK &amp; US Clients
-              </p>
+      <section className="relative w-full min-h-[calc(100svh-4rem)] flex items-center overflow-hidden bg-[#141413] py-16 sm:py-24">
+        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+          {HERO_SLIDES.map((slide, index) => {
+            if (!unlockedSlides.includes(index)) {
+              return null;
+            }
+            const isActive = index === activeSlide;
+            const isPrevious = index === prevSlide && !isActive;
+            const layerClass = isActive
+              ? 'z-10 opacity-100'
+              : isPrevious
+                ? 'z-[5] opacity-100'
+                : 'z-0 opacity-0';
 
-              <h1 className="mt-4 font-display text-4xl sm:text-5xl lg:text-[3.85rem] font-bold tracking-tight text-[#F4F3EE] leading-[1.06]">
-                AI videos, content and Google{' '}
-                <span className="font-serif-accent font-normal text-[#F59E0B]">visibility</span>{' '}
-                for small businesses
-              </h1>
-
-              <p className="mt-6 text-base sm:text-lg text-[#B3B2AB] leading-relaxed max-w-2xl">
-                Victor Autocore helps small businesses and online sellers get seen, get trusted and
-                get customers, with AI video adverts, social media content, store fixes and Google
-                visibility setup.
-              </p>
-
-              <div className="mt-8 flex flex-wrap items-center gap-4">
-                <a
-                  href={BUSINESS_FACTS.whatsappHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-md bg-[#F59E0B] hover:bg-[#D97706] hover:-translate-y-0.5 text-[#141413] text-sm font-semibold transition-all duration-200 whitespace-nowrap shrink-0"
-                >
-                  <MessageCircle className="w-4 h-4 shrink-0" aria-hidden="true" />
-                  <span>Start a project on WhatsApp</span>
-                </a>
-                <a
-                  href="#services"
-                  className="inline-flex items-center gap-2 px-5 py-3.5 rounded-md border border-[#2C2C28] bg-[#1C1C1A] hover:border-[#F59E0B] hover:-translate-y-0.5 text-[#F4F3EE] text-sm font-medium transition-all duration-200 whitespace-nowrap shrink-0"
-                >
-                  <span>See the services</span>
-                  <ArrowRight className="w-4 h-4 text-[#F59E0B]" aria-hidden="true" />
-                </a>
+            return (
+              <div
+                key={slide.src}
+                className={`absolute inset-0 transition-opacity duration-[800ms] ease-in-out ${layerClass}`}
+              >
+                <StudioImage
+                  src={slide.src}
+                  fallbackSrc={slide.fallbackSrc}
+                  alt={slide.alt}
+                  eager={index === 0}
+                  className={`w-full h-full object-cover ${slide.objectPositionClass}`}
+                />
               </div>
-            </HeroEntrance>
+            );
+          })}
 
-            <HeroEntrance delay={0.12} className="lg:col-span-5">
-              <div className="grid grid-cols-12 gap-3 bg-[#1C1C1A] border border-[#2C2C28] rounded-2xl p-3">
-                <div className="col-span-7 aspect-[3/4] rounded-xl overflow-hidden border border-[#2C2C28] bg-[#141413] group">
-                  <StudioImage
-                    src={STOCK_PHOTOS.gimbalShoot.src}
-                    fallbackSrc={STOCK_PHOTOS.gimbalShoot.fallbackSrc}
-                    alt={STOCK_PHOTOS.gimbalShoot.alt}
-                    eager
-                    className="w-full h-full object-cover group-hover:scale-[1.03]"
-                  />
-                </div>
-                <div className="col-span-5 flex flex-col gap-3">
-                  <div className="flex-1 rounded-xl overflow-hidden border border-[#2C2C28] bg-[#141413] group">
-                    <StudioImage
-                      src={STOCK_PHOTOS.creatorEditingDark.src}
-                      fallbackSrc={STOCK_PHOTOS.creatorEditingDark.fallbackSrc}
-                      alt={STOCK_PHOTOS.creatorEditingDark.alt}
-                      eager
-                      className="w-full h-full object-cover group-hover:scale-[1.03]"
-                    />
-                  </div>
-                  <div className="flex-1 rounded-xl overflow-hidden border border-[#2C2C28] bg-[#141413] group">
-                    <StudioImage
-                      src={STOCK_PHOTOS.phoneSocialFeed.src}
-                      fallbackSrc={STOCK_PHOTOS.phoneSocialFeed.fallbackSrc}
-                      alt={STOCK_PHOTOS.phoneSocialFeed.alt}
-                      eager
-                      className="w-full h-full object-cover group-hover:scale-[1.03]"
-                    />
-                  </div>
-                </div>
-              </div>
-            </HeroEntrance>
-          </div>
+          <div className="absolute inset-0 z-20 bg-gradient-to-r from-[#141413]/95 via-[#141413]/75 to-[#141413]/35" />
+          <div className="absolute inset-0 z-20 bg-gradient-to-t from-[#141413] via-[#141413]/45 to-[#141413]/25" />
+        </div>
+
+        <div className="relative z-30 w-full max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+          <HeroEntrance className="max-w-3xl">
+            <p className="text-sm font-medium text-[#F59E0B] tracking-wide">
+              Victor Autocore · Lagos, Nigeria · UK &amp; US Clients
+            </p>
+
+            <h1 className="mt-4 font-display text-4xl sm:text-5xl lg:text-[3.85rem] font-bold tracking-tight text-[#F4F3EE] leading-[1.06]">
+              AI videos, content and Google{' '}
+              <span className="font-serif-accent font-normal text-[#F59E0B]">visibility</span>{' '}
+              for small businesses
+            </h1>
+
+            <p className="mt-6 text-base sm:text-lg text-[#D6D4CC] leading-relaxed max-w-2xl">
+              Victor Autocore helps small businesses and online sellers get seen, get trusted and
+              get customers, with AI video adverts, social media content, store fixes and Google
+              visibility setup.
+            </p>
+
+            <div className="mt-8 flex flex-wrap items-center gap-4">
+              <a
+                href={BUSINESS_FACTS.whatsappHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-md bg-[#F59E0B] hover:bg-[#D97706] hover:-translate-y-0.5 text-[#141413] text-sm font-semibold transition-all duration-200 whitespace-nowrap shrink-0"
+              >
+                <MessageCircle className="w-4 h-4 shrink-0" aria-hidden="true" />
+                <span>Start a project on WhatsApp</span>
+              </a>
+              <a
+                href="#services"
+                className="inline-flex items-center gap-2 px-5 py-3.5 rounded-md border border-[#2C2C28] bg-[#1C1C1A]/90 hover:border-[#F59E0B] hover:-translate-y-0.5 text-[#F4F3EE] text-sm font-medium transition-all duration-200 whitespace-nowrap shrink-0"
+              >
+                <span>See the services</span>
+                <ArrowRight className="w-4 h-4 text-[#F59E0B]" aria-hidden="true" />
+              </a>
+            </div>
+          </HeroEntrance>
         </div>
       </section>
 
