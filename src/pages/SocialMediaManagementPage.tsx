@@ -142,8 +142,8 @@ export function SocialMediaManagementPage() {
               What your monthly management covers
             </h2>
             <p className="mt-3 text-base text-[#B3B2AB] leading-relaxed">
-              Handled remotely from Lagos for small businesses in the UK and US, backed by 5+ years
-              of freelance social media management and content creation.
+              Handled remotely for small businesses worldwide, backed by 5+ years of freelance
+              social media management and content creation.
             </p>
           </RevealSection>
 

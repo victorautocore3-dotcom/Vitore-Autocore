@@ -22,9 +22,8 @@ export function AboutPage() {
                 About {BUSINESS_FACTS.ownerFullName} ({BUSINESS_FACTS.ownerKnownAs})
               </h1>
               <p className="mt-5 text-base sm:text-lg text-[#B3B2AB] leading-relaxed">
-                Victor Autocore is run by Akinjide Akinola, known as Victor. Based in Lagos,
-                Nigeria, he works remotely for small businesses, brands and online sellers in the
-                UK and the US.
+                Victor Autocore is run by Akinjide Akinola, known as Victor. He works remotely for
+                small businesses, brands and online sellers worldwide.
               </p>
             </HeroEntrance>
 

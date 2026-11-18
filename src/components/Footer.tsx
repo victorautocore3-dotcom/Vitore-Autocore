@@ -93,7 +93,6 @@ export function Footer() {
           <p>
             {BUSINESS_FACTS.businessName} · {BUSINESS_FACTS.ownerFullName} ({BUSINESS_FACTS.ownerKnownAs})
           </p>
-          <p>Lagos, Nigeria · Serving UK and US clients remotely</p>
         </div>
       </div>
     </footer>

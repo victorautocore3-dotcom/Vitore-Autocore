@@ -27,15 +27,14 @@ export const BUSINESS_FACTS = {
   businessName: 'Victor Autocore',
   ownerFullName: 'Akinjide Akinola',
   ownerKnownAs: 'Victor',
-  location: 'Lagos, Nigeria',
-  serviceAreaStatement: 'Based in Lagos, Nigeria. Works remotely for clients in the UK and the US.',
+  serviceAreaStatement: 'Works remotely for clients worldwide.',
   email: 'victorautocore091@gmail.com',
   whatsappDisplay: '+2348110670885',
   whatsappHref: 'https://wa.me/2348110670885',
   instagramHandle: '@aianimator_victor',
   instagramHref: 'https://www.instagram.com/aianimator_victor',
   background: [
-    '5+ years of freelance social media management and content creation for UK and US brands.',
+    '5+ years of freelance social media management and content creation for brands worldwide.',
     'Community Manager and Content Writer at wilds.ai since 2024.',
     'AI video and UGC style ad creator since 2025.',
     'Runs the faceless YouTube channel Beyond Unknown.',
@@ -303,7 +302,7 @@ export const PAGE_SEO: Record<string, PageSeo> = {
     path: '/',
     title: 'Victor Autocore | AI Video Ads, Social Media and Google Visibility for Small Businesses',
     description:
-      'AI video adverts, Reels, social media management, store fixes and Google visibility setup (SEO, AEO, GEO) for small businesses and online sellers in the UK and US. Remote, personal, no filming needed.',
+      'AI video adverts, Reels, social media management, store fixes and Google visibility setup (SEO, AEO, GEO) for small businesses and online sellers worldwide. Remote, personal, no filming needed.',
   },
   aiVideoAds: {
     path: '/ai-video-ads',
@@ -339,7 +338,7 @@ export const PAGE_SEO: Record<string, PageSeo> = {
     path: '/about',
     title: 'About Victor | Victor Autocore',
     description:
-      'Akinjide Akinola (Victor): social media manager and AI video creator working remotely from Lagos for UK and US brands since 2020, community manager at wilds.ai since 2024.',
+      'Akinjide Akinola (Victor): social media manager and AI video creator working remotely for brands worldwide since 2020, community manager at wilds.ai since 2024.',
   },
   contact: {
     path: '/contact',
