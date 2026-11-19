@@ -82,6 +82,12 @@ const SAMPLE_ADVERTS = [
     title: 'The Invisible Store',
     description: 'A short story advert about good products nobody could find.',
   },
+  {
+    src: '/videos/sample-bare-bold.mp4',
+    poster: '/videos/poster-bare-bold.jpg',
+    title: 'Christmas Gift Card Trailer',
+    description: 'Christmas gift card trailer for a nails and aesthetics salon in Chelmsford',
+  },
 ];
 
 export function AiVideoAdsPage() {
