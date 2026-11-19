@@ -17,6 +17,8 @@ export function ContactPage() {
   const [details, setDetails] = useState('');
   const [errors, setErrors] = useState<FormErrors>({});
   const [submitted, setSubmitted] = useState(false);
+  const [isSending, setIsSending] = useState(false);
+  const [sendError, setSendError] = useState(false);
 
   function validate(): FormErrors {
     const nextErrors: FormErrors = {};
@@ -33,7 +35,7 @@ export function ContactPage() {
     return nextErrors;
   }
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const validationErrors = validate();
     if (Object.keys(validationErrors).length > 0) {
@@ -41,14 +43,33 @@ export function ContactPage() {
       return;
     }
     setErrors({});
-    setSubmitted(true);
+    setSendError(false);
+    setIsSending(true);
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/50d84279215744d0d155a1d91688debd', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          name: name.trim(),
+          email: email.trim(),
+          message: details.trim(),
+          _subject: `Enquiry from ${name.trim()} via Victor Autocore`,
+          _replyto: email.trim(),
+          _template: 'table',
+          _captcha: 'false',
+          _honey: '',
+        }),
+      });
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+      setSubmitted(true);
+    } catch {
+      setSendError(true);
+    } finally {
+      setIsSending(false);
+    }
   }
-
-  const encodedMailtoSubject = encodeURIComponent(`Enquiry from ${name.trim()} via Victor Autocore`);
-  const encodedMailtoBody = encodeURIComponent(
-    `Name: ${name.trim()}\nEmail: ${email.trim()}\n\nWhat I need:\n${details.trim()}`
-  );
-  const mailtoLink = `mailto:${BUSINESS_FACTS.email}?subject=${encodedMailtoSubject}&body=${encodedMailtoBody}`;
 
   const encodedWhatsappText = encodeURIComponent(
     `Hi Victor, my name is ${name.trim()} (${email.trim()}). Here is what I need: ${details.trim()}`
@@ -156,12 +177,12 @@ export function ContactPage() {
                       />
                       <div>
                         <h2 className="font-display text-2xl font-semibold text-[#F4F3EE]">
-                          Your enquiry is ready to send
+                          Your message has been sent
                         </h2>
                         <p className="mt-2 text-sm sm:text-base text-[#B3B2AB] leading-relaxed">
-                          Thank you, {name.trim()}. Victor replies personally to every message. Send
-                          your note directly via WhatsApp or your email app below so it reaches him
-                          straight away.
+                          Thank you, {name.trim()}. Your message is on its way to Victor, and he
+                          replies personally to every message. If it is urgent, you can also reach
+                          him on WhatsApp below.
                         </p>
                       </div>
                     </div>
@@ -192,14 +213,6 @@ export function ContactPage() {
                         <span>Send via WhatsApp</span>
                       </a>
 
-                      <a
-                        href={mailtoLink}
-                        className="inline-flex items-center gap-2 px-5 py-3 rounded-md border border-[#2C2C28] bg-[#141413] hover:border-[#F59E0B] hover:-translate-y-0.5 text-[#F4F3EE] text-sm font-medium transition-all duration-200"
-                      >
-                        <Mail className="w-4 h-4 text-[#F59E0B] shrink-0" aria-hidden="true" />
-                        <span>Open in Email App</span>
-                      </a>
-
                       <button
                         type="button"
                         onClick={() => {
@@ -215,7 +228,14 @@ export function ContactPage() {
                     </div>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} noValidate className="space-y-6">
+                  <>
+                    {sendError && (
+                      <p role="alert" className="mb-4 text-xs text-[#F59E0B]">
+                        Sorry, the message could not be sent just now. Please try again, or reach
+                        Victor on WhatsApp.
+                      </p>
+                    )}
+                    <form onSubmit={handleSubmit} noValidate className="space-y-6">
                     <div>
                       <h2 className="font-display text-2xl font-semibold text-[#F4F3EE]">
                         Tell Victor what you need
@@ -291,12 +311,14 @@ export function ContactPage() {
 
                     <button
                       type="submit"
+                      disabled={isSending}
                       className="inline-flex items-center gap-2 px-6 py-3.5 rounded-md bg-[#F59E0B] hover:bg-[#D97706] hover:-translate-y-0.5 text-[#141413] text-sm font-semibold transition-all duration-200 cursor-pointer"
                     >
                       <Send className="w-4 h-4 shrink-0" aria-hidden="true" />
-                      <span>Prepare message for Victor</span>
+                      <span>{isSending ? 'Sending...' : 'Send message'}</span>
                     </button>
                   </form>
+                  </>
                 )}
               </div>
             </div>
