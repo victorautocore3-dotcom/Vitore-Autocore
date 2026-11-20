@@ -29,8 +29,8 @@ export const BUSINESS_FACTS = {
   ownerKnownAs: 'Victor',
   serviceAreaStatement: 'Works remotely for clients worldwide.',
   email: 'victorautocore091@gmail.com',
-  whatsappDisplay: '+2348110670885',
-  whatsappHref: 'https://wa.me/2348110670885',
+  whatsappDisplay: '+44 7480 248559',
+  whatsappHref: 'https://wa.me/447480248559',
   instagramHandle: '@aianimator_victor',
   instagramHref: 'https://www.instagram.com/aianimator_victor',
   background: [
