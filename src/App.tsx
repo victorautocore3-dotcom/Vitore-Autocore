@@ -6,6 +6,7 @@ import {SocialMediaManagementPage} from './pages/SocialMediaManagementPage';
 import {StoreFixesPage} from './pages/StoreFixesPage';
 import {GoogleVisibilityPage} from './pages/GoogleVisibilityPage';
 import {WebsiteDesignPage} from './pages/WebsiteDesignPage';
+import {GraphicsDesignPage} from './pages/GraphicsDesignPage';
 import {AboutPage} from './pages/AboutPage';
 import {ContactPage} from './pages/ContactPage';
 
@@ -20,6 +21,7 @@ export default function App() {
           <Route path="/store-fixes" element={<StoreFixesPage />} />
           <Route path="/google-visibility" element={<GoogleVisibilityPage />} />
           <Route path="/website-design" element={<WebsiteDesignPage />} />
+          <Route path="/graphics-design" element={<GraphicsDesignPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />

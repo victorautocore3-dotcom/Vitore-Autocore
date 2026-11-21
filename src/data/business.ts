@@ -46,6 +46,7 @@ export const BUSINESS_FACTS = {
     'Store setup and fixes for online sellers',
     'Google visibility setup (SEO, AEO and GEO)',
     'Website and app design',
+    'Graphics design',
     'n8n automation',
   ],
 } as const;
@@ -295,6 +296,25 @@ export const SERVICE_LINKS: ServiceLinkItem[] = [
       'n8n automation workflows',
     ],
   },
+  {
+    number: '06',
+    title: 'Graphics Design',
+    shortTitle: 'Graphics Design',
+    path: '/graphics-design',
+    summary:
+      'Posters, flyers, social media graphics and brand identity that make a small business look professional and get noticed.',
+    audience: 'Churches, schools, academies and small businesses',
+    image: '/design-sunday-celebration.jpg',
+    fallbackImage: '/design-sunday-celebration.jpg',
+    imageAlt: 'Sunday Celebration church event poster by Victor Autocore',
+    subServices: [
+      'Social media design',
+      'Brand identity',
+      'Posters and flyers',
+      'Advertising graphics',
+      'Photo compositing',
+    ],
+  },
 ];
 
 export const PAGE_SEO: Record<string, PageSeo> = {
@@ -333,6 +353,12 @@ export const PAGE_SEO: Record<string, PageSeo> = {
     title: 'Website and App Design | Victor Autocore',
     description:
       'Business websites built the search way from day one: one page per service, buyer questions answered, ready for Google and AI search.',
+  },
+  graphicsDesign: {
+    path: '/graphics-design',
+    title: 'Graphics Design | Victor Autocore',
+    description:
+      'Graphics design for small businesses, churches and schools: social media design, brand identity, posters, flyers and advertising graphics by Victor Autocore.',
   },
   about: {
     path: '/about',
