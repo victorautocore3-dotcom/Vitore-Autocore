@@ -133,30 +133,6 @@ const DESIGN_PORTFOLIO: DesignWorkItem[] = [
     label: 'Agency graphic',
     alt: 'Your Next Client Is Already Scrolling agency graphic by Victor Autocore',
   },
-  {
-    id: 'store-redesign',
-    number: '10',
-    src: '/design-store-redesign.jpg',
-    caption: 'Store redesign',
-    label: 'Before and after client work',
-    alt: 'Before and after online store redesign showcase by Victor Autocore',
-  },
-  {
-    id: 'signal-v-logo',
-    number: '11',
-    src: '/design-signal-v-logo.png',
-    caption: 'Signal V',
-    label: 'Victor Autocore logo',
-    alt: 'Signal V brand logo design by Victor Autocore',
-  },
-  {
-    id: 'seo-graphic',
-    number: '12',
-    src: '/design-seo-graphic.jpg',
-    caption: 'SEO, AEO and GEO explained',
-    label: 'Educational graphic',
-    alt: 'SEO, AEO and GEO explained educational graphic by Victor Autocore',
-  },
 ];
 
 const GRAPHICS_FAQS: FaqItem[] = [
@@ -232,7 +208,7 @@ export function GraphicsDesignPage() {
                   href="#selected-design-work"
                   className="inline-flex items-center gap-2 px-5 py-3.5 rounded-md border border-[#2C2C28] bg-[#1C1C1A] hover:border-[#F59E0B] hover:-translate-y-0.5 text-[#F4F3EE] text-sm font-medium transition-all duration-200 whitespace-nowrap shrink-0"
                 >
-                  <span>Browse the 12-piece gallery</span>
+                  <span>Browse the 9-piece gallery</span>
                 </a>
               </div>
             </HeroEntrance>
@@ -293,14 +269,14 @@ export function GraphicsDesignPage() {
           <RevealSection className="max-w-2xl">
             <div className="inline-flex items-center gap-2 text-sm font-medium text-[#F59E0B]">
               <Sparkles className="w-4 h-4" aria-hidden="true" />
-              <span>Portfolio Gallery · 12 Pieces</span>
+              <span>Portfolio Gallery · 9 Pieces</span>
             </div>
             <h2 className="mt-2 font-display text-3xl sm:text-4xl font-bold tracking-tight text-[#F4F3EE]">
               Selected design work
             </h2>
             <p className="mt-3 text-base text-[#B3B2AB] leading-relaxed">
-              Posters, course flyers, advertising graphics, brand logos, store redesign visuals and
-              educational graphics created for churches, schools, academies and small businesses.
+              Posters, course flyers and advertising graphics created for churches, schools,
+              academies and small businesses.
             </p>
           </RevealSection>
 
