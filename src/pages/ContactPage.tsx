@@ -46,7 +46,7 @@ export function ContactPage() {
     setSendError(false);
     setIsSending(true);
     try {
-      const response = await fetch('https://formsubmit.co/ajax/50d84279215744d0d155a1d91688debd', {
+      const response = await fetch('https://formsubmit.co/ajax/victorautocore@gmail.com', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({

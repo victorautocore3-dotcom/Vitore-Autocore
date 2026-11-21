@@ -28,7 +28,7 @@ export const BUSINESS_FACTS = {
   ownerFullName: 'Akinjide Akinola',
   ownerKnownAs: 'Victor',
   serviceAreaStatement: 'Works remotely for clients worldwide.',
-  email: 'victorautocore091@gmail.com',
+  email: 'victorautocore@gmail.com',
   whatsappDisplay: '+44 7480 248559',
   whatsappHref: 'https://wa.me/447480248559',
   instagramHandle: '@aianimator_victor',
@@ -344,6 +344,6 @@ export const PAGE_SEO: Record<string, PageSeo> = {
     path: '/contact',
     title: 'Contact | Victor Autocore',
     description:
-      'Message Victor Autocore on WhatsApp or email victorautocore091@gmail.com for AI video ads, social media management, store fixes or Google visibility setup.',
+      'Message Victor Autocore on WhatsApp or email victorautocore@gmail.com for AI video ads, social media management, store fixes or Google visibility setup.',
   },
 };
