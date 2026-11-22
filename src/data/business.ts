@@ -304,9 +304,9 @@ export const SERVICE_LINKS: ServiceLinkItem[] = [
     summary:
       'Posters, flyers, social media graphics and brand identity that make a small business look professional and get noticed.',
     audience: 'Churches, schools, academies and small businesses',
-    image: '/design-sunday-celebration.jpg',
-    fallbackImage: '/design-sunday-celebration.jpg',
-    imageAlt: 'Sunday Celebration church event poster by Victor Autocore',
+    image: '/design-music-night.jpg',
+    fallbackImage: '/design-music-night.jpg',
+    imageAlt: 'Afrobeats Night club flyer by Victor Autocore',
     subServices: [
       'Social media design',
       'Brand identity',

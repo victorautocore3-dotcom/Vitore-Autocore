@@ -62,76 +62,84 @@ const DELIVERABLES = [
 
 const DESIGN_PORTFOLIO: DesignWorkItem[] = [
   {
-    id: 'sunday-celebration',
+    id: 'afrobeats-night',
     number: '01',
-    src: '/design-sunday-celebration.jpg',
-    caption: 'Sunday Celebration',
-    label: 'Church event poster',
-    alt: 'Sunday Celebration church event poster by Victor Autocore',
+    src: '/design-music-night.jpg',
+    caption: 'Afrobeats Night',
+    label: 'Club event flyer',
+    alt: 'Afrobeats Night club flyer by Victor Autocore',
   },
   {
-    id: 'northgate-academy',
+    id: 'shape-your-body',
     number: '02',
-    src: '/design-northgate-academy.jpg',
-    caption: 'Join Northgate Academy',
-    label: 'Course flyer',
-    alt: 'Join Northgate Academy course enrolment flyer by Victor Autocore',
+    src: '/design-gym.jpg',
+    caption: 'Shape Your Body',
+    label: 'Gym flyer',
+    alt: 'Shape Your Body gym flyer by Victor Autocore',
   },
   {
-    id: 'back-to-class',
+    id: 'saffron-and-smoke',
     number: '03',
-    src: '/design-back-to-class.jpg',
-    caption: 'Back to Class',
-    label: 'Tutoring poster',
-    alt: 'Back to Class tutoring poster by Victor Autocore',
+    src: '/design-restaurant.jpg',
+    caption: 'Saffron and Smoke',
+    label: 'Restaurant flyer',
+    alt: 'Saffron and Smoke restaurant flyer by Victor Autocore',
   },
   {
-    id: 'schoolsure',
+    id: 'ember-sales',
     number: '04',
-    src: '/design-schoolsure.jpg',
-    caption: 'Learning Must Not Pause',
-    label: 'Education cover advert',
-    alt: 'Learning Must Not Pause SchoolSure education cover advert by Victor Autocore',
+    src: '/design-fashion-sale.jpg',
+    caption: 'Ember Sales',
+    label: 'Fashion sale flyer',
+    alt: 'Ember Sales fashion sale flyer by Victor Autocore',
   },
   {
-    id: 'skillforge',
+    id: 'velvet-touch-beauty-lounge',
     number: '05',
-    src: '/design-skillforge.jpg',
-    caption: 'Monday is Day One',
-    label: 'Tech academy poster',
-    alt: 'Monday is Day One tech academy poster by Victor Autocore',
+    src: '/design-beauty.jpg',
+    caption: 'Velvet Touch Beauty Lounge',
+    label: 'Beauty flyer',
+    alt: 'Velvet Touch Beauty Lounge beauty flyer by Victor Autocore',
   },
   {
-    id: 'brand-identity-ad',
+    id: 'sparklepro-cleaning',
     number: '06',
-    src: '/design-brand-identity-ad.jpg',
-    caption: 'Brand identity sale advert',
-    label: 'Victor Autocore',
-    alt: 'Brand identity sale advert designed by Victor Autocore',
+    src: '/design-cleaning.jpg',
+    caption: 'SparklePro Cleaning',
+    label: 'Cleaning flyer',
+    alt: 'SparklePro Cleaning cleaning flyer by Victor Autocore',
   },
   {
-    id: 'pinnacle-leads',
+    id: 'northgate-academy-admissions',
     number: '07',
-    src: '/design-pinnacle-leads.jpg',
-    caption: 'Where Are the Customers',
-    label: 'Lead generation graphic',
-    alt: 'Where Are the Customers lead generation social graphic by Victor Autocore',
+    src: '/design-school-northgate.jpg',
+    caption: 'Northgate Academy Admissions',
+    label: 'School flyer',
+    alt: 'Northgate Academy Admissions school flyer by Victor Autocore',
   },
   {
-    id: 'creativity-battery',
+    id: 'brightpath-international-college',
     number: '08',
-    src: '/design-creativity-battery.jpg',
-    caption: 'Is Your Creativity Running Low',
-    label: 'Concept poster',
-    alt: 'Is Your Creativity Running Low concept poster by Victor Autocore',
+    src: '/design-school-brightpath.jpg',
+    caption: 'Brightpath International College',
+    label: 'School flyer',
+    alt: 'Brightpath International College school flyer by Victor Autocore',
   },
   {
-    id: 'next-client',
+    id: 'grace-hill-chapel-conference',
     number: '09',
-    src: '/design-next-client.jpg',
-    caption: 'Your Next Client Is Already Scrolling',
-    label: 'Agency graphic',
-    alt: 'Your Next Client Is Already Scrolling agency graphic by Victor Autocore',
+    src: '/design-church-conference.jpg',
+    caption: 'Grace Hill Chapel Conference',
+    label: 'Church conference flyer',
+    alt: 'Grace Hill Chapel Conference church conference flyer by Victor Autocore',
+  },
+  {
+    id: 'prophetic-sunday',
+    number: '10',
+    src: '/design-prophetic-sunday.jpg',
+    caption: 'Prophetic Sunday',
+    label: 'Church flyer',
+    alt: 'Prophetic Sunday church flyer by Victor Autocore',
   },
 ];
 
@@ -208,7 +216,7 @@ export function GraphicsDesignPage() {
                   href="#selected-design-work"
                   className="inline-flex items-center gap-2 px-5 py-3.5 rounded-md border border-[#2C2C28] bg-[#1C1C1A] hover:border-[#F59E0B] hover:-translate-y-0.5 text-[#F4F3EE] text-sm font-medium transition-all duration-200 whitespace-nowrap shrink-0"
                 >
-                  <span>Browse the 9-piece gallery</span>
+                  <span>Browse the 10-piece gallery</span>
                 </a>
               </div>
             </HeroEntrance>
@@ -216,9 +224,9 @@ export function GraphicsDesignPage() {
             <HeroEntrance delay={0.12} className="lg:col-span-5">
               <div className="group h-full min-h-[280px] max-h-[440px] rounded-xl overflow-hidden border border-[#2C2C28] bg-[#1C1C1A] p-3 flex items-center justify-center">
                 <StudioImage
-                  src="/design-sunday-celebration.jpg"
-                  fallbackSrc="/design-sunday-celebration.jpg"
-                  alt="Sunday Celebration church event poster by Victor Autocore"
+                  src="/design-music-night.jpg"
+                  fallbackSrc="/design-music-night.jpg"
+                  alt="Afrobeats Night club flyer by Victor Autocore"
                   eager
                   className="w-full h-full object-contain rounded-lg group-hover:scale-[1.02]"
                 />
@@ -269,7 +277,7 @@ export function GraphicsDesignPage() {
           <RevealSection className="max-w-2xl">
             <div className="inline-flex items-center gap-2 text-sm font-medium text-[#F59E0B]">
               <Sparkles className="w-4 h-4" aria-hidden="true" />
-              <span>Portfolio Gallery · 9 Pieces</span>
+              <span>Portfolio Gallery · 10 Pieces</span>
             </div>
             <h2 className="mt-2 font-display text-3xl sm:text-4xl font-bold tracking-tight text-[#F4F3EE]">
               Selected design work
