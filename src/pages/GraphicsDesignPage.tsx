@@ -190,8 +190,40 @@ const DESIGN_PORTFOLIO: DesignWorkItem[] = [
     alt: 'FreshPress Laundry laundry flyer by Victor Autocore',
   },
   {
-    id: 'academy',
+    id: 'fade-factory-barbers',
     number: '17',
+    src: '/design-fade-factory-barbers.jpg',
+    caption: 'Fade Factory Barbers',
+    label: 'Barbershop flyer',
+    alt: 'Fade Factory Barbers barbershop flyer by Victor Autocore',
+  },
+  {
+    id: 'mediplus-pharmacy',
+    number: '18',
+    src: '/design-mediplus-pharmacy.jpg',
+    caption: 'MediPlus Pharmacy',
+    label: 'Pharmacy flyer',
+    alt: 'MediPlus Pharmacy pharmacy flyer by Victor Autocore',
+  },
+  {
+    id: 'adaeze-chinedu-wedding',
+    number: '19',
+    src: '/design-adaeze-chinedu-wedding.jpg',
+    caption: 'Adaeze & Chinedu Wedding',
+    label: 'Wedding invitation flyer',
+    alt: 'Adaeze & Chinedu Wedding wedding invitation flyer by Victor Autocore',
+  },
+  {
+    id: 'technova-gadgets-black-friday',
+    number: '20',
+    src: '/design-technova-gadgets-black-friday.jpg',
+    caption: 'Technova Gadgets Black Friday',
+    label: 'Gadgets Black Friday flyer',
+    alt: 'Technova Gadgets Black Friday gadgets Black Friday flyer by Victor Autocore',
+  },
+  {
+    id: 'academy',
+    number: '21',
     src: '/design-academy.jpg',
     caption: 'Join Northgate Academy',
     label: 'Course flyer',
@@ -199,7 +231,7 @@ const DESIGN_PORTFOLIO: DesignWorkItem[] = [
   },
   {
     id: 'back-to-class',
-    number: '18',
+    number: '22',
     src: '/design-back-to-class.jpg',
     caption: 'Back to Class',
     label: 'Tutoring poster',
@@ -207,7 +239,7 @@ const DESIGN_PORTFOLIO: DesignWorkItem[] = [
   },
   {
     id: 'learning',
-    number: '19',
+    number: '23',
     src: '/design-learning.jpg',
     caption: 'Learning Must Not Pause',
     label: 'Education cover advert',
@@ -215,7 +247,7 @@ const DESIGN_PORTFOLIO: DesignWorkItem[] = [
   },
   {
     id: 'day-one',
-    number: '20',
+    number: '24',
     src: '/design-day-one.jpg',
     caption: 'Monday is Day One',
     label: 'Tech academy poster',
@@ -223,7 +255,7 @@ const DESIGN_PORTFOLIO: DesignWorkItem[] = [
   },
   {
     id: 'brand-sale',
-    number: '21',
+    number: '25',
     src: '/design-brand-sale.jpg',
     caption: 'Brand identity sale advert',
     label: 'Victor Autocore',
@@ -231,7 +263,7 @@ const DESIGN_PORTFOLIO: DesignWorkItem[] = [
   },
   {
     id: 'customers',
-    number: '22',
+    number: '26',
     src: '/design-customers.jpg',
     caption: 'Where Are the Customers',
     label: 'Lead generation graphic',
@@ -239,7 +271,7 @@ const DESIGN_PORTFOLIO: DesignWorkItem[] = [
   },
   {
     id: 'creativity',
-    number: '23',
+    number: '27',
     src: '/design-creativity.jpg',
     caption: 'Is Your Creativity Running Low',
     label: 'Concept poster',
@@ -247,7 +279,7 @@ const DESIGN_PORTFOLIO: DesignWorkItem[] = [
   },
   {
     id: 'next-client',
-    number: '24',
+    number: '28',
     src: '/design-next-client.jpg',
     caption: 'Your Next Client Is Already Scrolling',
     label: 'Agency graphic',
@@ -328,7 +360,7 @@ export function GraphicsDesignPage() {
                   href="#selected-design-work"
                   className="inline-flex items-center gap-2 px-5 py-3.5 rounded-md border border-[#2C2C28] bg-[#1C1C1A] hover:border-[#F59E0B] hover:-translate-y-0.5 text-[#F4F3EE] text-sm font-medium transition-all duration-200 whitespace-nowrap shrink-0"
                 >
-                  <span>Browse the 24-piece gallery</span>
+                  <span>Browse the 28-piece gallery</span>
                 </a>
               </div>
             </HeroEntrance>
@@ -389,7 +421,7 @@ export function GraphicsDesignPage() {
           <RevealSection className="max-w-2xl">
             <div className="inline-flex items-center gap-2 text-sm font-medium text-[#F59E0B]">
               <Sparkles className="w-4 h-4" aria-hidden="true" />
-              <span>Portfolio Gallery · 24 Pieces</span>
+              <span>Portfolio Gallery · 28 Pieces</span>
             </div>
             <h2 className="mt-2 font-display text-3xl sm:text-4xl font-bold tracking-tight text-[#F4F3EE]">
               Selected design work
