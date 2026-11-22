@@ -141,6 +141,70 @@ const DESIGN_PORTFOLIO: DesignWorkItem[] = [
     label: 'Church flyer',
     alt: 'Prophetic Sunday church flyer by Victor Autocore',
   },
+  {
+    id: 'academy',
+    number: '11',
+    src: '/design-academy.jpg',
+    caption: 'Join Northgate Academy',
+    label: 'Course flyer',
+    alt: 'Join Northgate Academy course flyer by Victor Autocore',
+  },
+  {
+    id: 'back-to-class',
+    number: '12',
+    src: '/design-back-to-class.jpg',
+    caption: 'Back to Class',
+    label: 'Tutoring poster',
+    alt: 'Back to Class tutoring poster by Victor Autocore',
+  },
+  {
+    id: 'learning',
+    number: '13',
+    src: '/design-learning.jpg',
+    caption: 'Learning Must Not Pause',
+    label: 'Education cover advert',
+    alt: 'Learning Must Not Pause education cover advert by Victor Autocore',
+  },
+  {
+    id: 'day-one',
+    number: '14',
+    src: '/design-day-one.jpg',
+    caption: 'Monday is Day One',
+    label: 'Tech academy poster',
+    alt: 'Monday is Day One tech academy poster by Victor Autocore',
+  },
+  {
+    id: 'brand-sale',
+    number: '15',
+    src: '/design-brand-sale.jpg',
+    caption: 'Brand identity sale advert',
+    label: 'Victor Autocore',
+    alt: 'Brand identity sale advert by Victor Autocore',
+  },
+  {
+    id: 'customers',
+    number: '16',
+    src: '/design-customers.jpg',
+    caption: 'Where Are the Customers',
+    label: 'Lead generation graphic',
+    alt: 'Where Are the Customers lead generation graphic by Victor Autocore',
+  },
+  {
+    id: 'creativity',
+    number: '17',
+    src: '/design-creativity.jpg',
+    caption: 'Is Your Creativity Running Low',
+    label: 'Concept poster',
+    alt: 'Is Your Creativity Running Low concept poster by Victor Autocore',
+  },
+  {
+    id: 'next-client',
+    number: '18',
+    src: '/design-next-client.jpg',
+    caption: 'Your Next Client Is Already Scrolling',
+    label: 'Agency graphic',
+    alt: 'Your Next Client Is Already Scrolling agency graphic by Victor Autocore',
+  },
 ];
 
 const GRAPHICS_FAQS: FaqItem[] = [
@@ -216,7 +280,7 @@ export function GraphicsDesignPage() {
                   href="#selected-design-work"
                   className="inline-flex items-center gap-2 px-5 py-3.5 rounded-md border border-[#2C2C28] bg-[#1C1C1A] hover:border-[#F59E0B] hover:-translate-y-0.5 text-[#F4F3EE] text-sm font-medium transition-all duration-200 whitespace-nowrap shrink-0"
                 >
-                  <span>Browse the 10-piece gallery</span>
+                  <span>Browse the 18-piece gallery</span>
                 </a>
               </div>
             </HeroEntrance>
@@ -277,7 +341,7 @@ export function GraphicsDesignPage() {
           <RevealSection className="max-w-2xl">
             <div className="inline-flex items-center gap-2 text-sm font-medium text-[#F59E0B]">
               <Sparkles className="w-4 h-4" aria-hidden="true" />
-              <span>Portfolio Gallery · 10 Pieces</span>
+              <span>Portfolio Gallery · 18 Pieces</span>
             </div>
             <h2 className="mt-2 font-display text-3xl sm:text-4xl font-bold tracking-tight text-[#F4F3EE]">
               Selected design work
