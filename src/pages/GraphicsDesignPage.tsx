@@ -67,7 +67,7 @@ const DESIGN_PORTFOLIO: DesignWorkItem[] = [
     src: '/design-music-night.jpg',
     caption: 'Afrobeats Night',
     label: 'Club event flyer',
-    alt: 'Afrobeats Night club flyer by Victor Autocore',
+    alt: 'Afrobeats Night club event flyer design',
   },
   {
     id: 'shape-your-body',
@@ -75,7 +75,7 @@ const DESIGN_PORTFOLIO: DesignWorkItem[] = [
     src: '/design-gym.jpg',
     caption: 'Shape Your Body',
     label: 'Gym flyer',
-    alt: 'Shape Your Body gym flyer by Victor Autocore',
+    alt: 'Shape Your Body gym flyer design',
   },
   {
     id: 'saffron-and-smoke',
@@ -83,7 +83,7 @@ const DESIGN_PORTFOLIO: DesignWorkItem[] = [
     src: '/design-restaurant.jpg',
     caption: 'Saffron and Smoke',
     label: 'Restaurant flyer',
-    alt: 'Saffron and Smoke restaurant flyer by Victor Autocore',
+    alt: 'Saffron and Smoke restaurant flyer design',
   },
   {
     id: 'ember-sales',
@@ -91,7 +91,7 @@ const DESIGN_PORTFOLIO: DesignWorkItem[] = [
     src: '/design-fashion-sale.jpg',
     caption: 'Ember Sales',
     label: 'Fashion sale flyer',
-    alt: 'Ember Sales fashion sale flyer by Victor Autocore',
+    alt: 'Ember Sales fashion sale flyer design',
   },
   {
     id: 'velvet-touch-beauty-lounge',
@@ -99,7 +99,7 @@ const DESIGN_PORTFOLIO: DesignWorkItem[] = [
     src: '/design-beauty.jpg',
     caption: 'Velvet Touch Beauty Lounge',
     label: 'Beauty flyer',
-    alt: 'Velvet Touch Beauty Lounge beauty flyer by Victor Autocore',
+    alt: 'Velvet Touch Beauty Lounge beauty flyer design',
   },
   {
     id: 'sparklepro-cleaning',
@@ -107,7 +107,7 @@ const DESIGN_PORTFOLIO: DesignWorkItem[] = [
     src: '/design-cleaning.jpg',
     caption: 'SparklePro Cleaning',
     label: 'Cleaning flyer',
-    alt: 'SparklePro Cleaning cleaning flyer by Victor Autocore',
+    alt: 'SparklePro Cleaning cleaning flyer design',
   },
   {
     id: 'northgate-academy-admissions',
@@ -115,7 +115,7 @@ const DESIGN_PORTFOLIO: DesignWorkItem[] = [
     src: '/design-school-northgate.jpg',
     caption: 'Northgate Academy Admissions',
     label: 'School flyer',
-    alt: 'Northgate Academy Admissions school flyer by Victor Autocore',
+    alt: 'Northgate Academy Admissions school flyer design',
   },
   {
     id: 'brightpath-international-college',
@@ -123,7 +123,7 @@ const DESIGN_PORTFOLIO: DesignWorkItem[] = [
     src: '/design-school-brightpath.jpg',
     caption: 'Brightpath International College',
     label: 'School flyer',
-    alt: 'Brightpath International College school flyer by Victor Autocore',
+    alt: 'Brightpath International College school flyer design',
   },
   {
     id: 'grace-hill-chapel-conference',
@@ -131,7 +131,7 @@ const DESIGN_PORTFOLIO: DesignWorkItem[] = [
     src: '/design-church-conference.jpg',
     caption: 'Grace Hill Chapel Conference',
     label: 'Church conference flyer',
-    alt: 'Grace Hill Chapel Conference church conference flyer by Victor Autocore',
+    alt: 'Grace Hill Chapel Conference church conference flyer design',
   },
   {
     id: 'prophetic-sunday',
@@ -139,7 +139,7 @@ const DESIGN_PORTFOLIO: DesignWorkItem[] = [
     src: '/design-prophetic-sunday.jpg',
     caption: 'Prophetic Sunday',
     label: 'Church flyer',
-    alt: 'Prophetic Sunday church flyer by Victor Autocore',
+    alt: 'Prophetic Sunday church flyer design',
   },
   {
     id: 'haven-crest-homes',
@@ -147,7 +147,7 @@ const DESIGN_PORTFOLIO: DesignWorkItem[] = [
     src: '/design-haven-crest-homes.jpg',
     caption: 'Haven Crest Homes',
     label: 'Real estate flyer',
-    alt: 'Haven Crest Homes real estate flyer by Victor Autocore',
+    alt: 'Haven Crest Homes real estate flyer design',
   },
   {
     id: 'shinepro-auto-spa',
@@ -155,7 +155,7 @@ const DESIGN_PORTFOLIO: DesignWorkItem[] = [
     src: '/design-shinepro-auto-spa.jpg',
     caption: 'ShinePro Auto Spa',
     label: 'Car wash flyer',
-    alt: 'ShinePro Auto Spa car wash flyer by Victor Autocore',
+    alt: 'ShinePro Auto Spa car wash flyer design',
   },
   {
     id: 'golden-crust-bakery',
@@ -163,7 +163,7 @@ const DESIGN_PORTFOLIO: DesignWorkItem[] = [
     src: '/design-golden-crust-bakery.jpg',
     caption: 'Golden Crust Bakery',
     label: 'Bakery flyer',
-    alt: 'Golden Crust Bakery bakery flyer by Victor Autocore',
+    alt: 'Golden Crust Bakery bakery flyer design',
   },
   {
     id: 'wakawaka-travels',
@@ -171,7 +171,7 @@ const DESIGN_PORTFOLIO: DesignWorkItem[] = [
     src: '/design-wakawaka-travels.jpg',
     caption: 'Wakawaka Travels',
     label: 'Travel flyer',
-    alt: 'Wakawaka Travels travel flyer by Victor Autocore',
+    alt: 'Wakawaka Travels travel flyer design',
   },
   {
     id: 'glow-braids-hair-salon',
@@ -179,7 +179,7 @@ const DESIGN_PORTFOLIO: DesignWorkItem[] = [
     src: '/design-glow-braids-hair-salon.jpg',
     caption: 'Glow & Braids Hair Salon',
     label: 'Hair salon flyer',
-    alt: 'Glow & Braids Hair Salon hair salon flyer by Victor Autocore',
+    alt: 'Glow & Braids Hair Salon hair salon flyer design',
   },
   {
     id: 'freshpress-laundry',
@@ -187,7 +187,7 @@ const DESIGN_PORTFOLIO: DesignWorkItem[] = [
     src: '/design-freshpress-laundry.jpg',
     caption: 'FreshPress Laundry',
     label: 'Laundry flyer',
-    alt: 'FreshPress Laundry laundry flyer by Victor Autocore',
+    alt: 'FreshPress Laundry laundry flyer design',
   },
   {
     id: 'fade-factory-barbers',
@@ -195,7 +195,7 @@ const DESIGN_PORTFOLIO: DesignWorkItem[] = [
     src: '/design-fade-factory-barbers.jpg',
     caption: 'Fade Factory Barbers',
     label: 'Barbershop flyer',
-    alt: 'Fade Factory Barbers barbershop flyer by Victor Autocore',
+    alt: 'Fade Factory Barbers barbershop flyer design',
   },
   {
     id: 'mediplus-pharmacy',
@@ -203,7 +203,7 @@ const DESIGN_PORTFOLIO: DesignWorkItem[] = [
     src: '/design-mediplus-pharmacy.jpg',
     caption: 'MediPlus Pharmacy',
     label: 'Pharmacy flyer',
-    alt: 'MediPlus Pharmacy pharmacy flyer by Victor Autocore',
+    alt: 'MediPlus Pharmacy pharmacy flyer design',
   },
   {
     id: 'adaeze-chinedu-wedding',
@@ -211,7 +211,7 @@ const DESIGN_PORTFOLIO: DesignWorkItem[] = [
     src: '/design-adaeze-chinedu-wedding.jpg',
     caption: 'Adaeze & Chinedu Wedding',
     label: 'Wedding invitation flyer',
-    alt: 'Adaeze & Chinedu Wedding wedding invitation flyer by Victor Autocore',
+    alt: 'Adaeze & Chinedu Wedding wedding invitation flyer design',
   },
   {
     id: 'technova-gadgets-black-friday',
@@ -219,7 +219,7 @@ const DESIGN_PORTFOLIO: DesignWorkItem[] = [
     src: '/design-technova-gadgets-black-friday.jpg',
     caption: 'Technova Gadgets Black Friday',
     label: 'Gadgets Black Friday flyer',
-    alt: 'Technova Gadgets Black Friday gadgets Black Friday flyer by Victor Autocore',
+    alt: 'Technova Gadgets Black Friday gadgets Black Friday flyer design',
   },
   {
     id: 'academy',
@@ -227,7 +227,7 @@ const DESIGN_PORTFOLIO: DesignWorkItem[] = [
     src: '/design-academy.jpg',
     caption: 'Join Northgate Academy',
     label: 'Course flyer',
-    alt: 'Join Northgate Academy course flyer by Victor Autocore',
+    alt: 'Join Northgate Academy course flyer design',
   },
   {
     id: 'back-to-class',
@@ -235,7 +235,7 @@ const DESIGN_PORTFOLIO: DesignWorkItem[] = [
     src: '/design-back-to-class.jpg',
     caption: 'Back to Class',
     label: 'Tutoring poster',
-    alt: 'Back to Class tutoring poster by Victor Autocore',
+    alt: 'Back to Class tutoring poster design',
   },
   {
     id: 'learning',
@@ -243,7 +243,7 @@ const DESIGN_PORTFOLIO: DesignWorkItem[] = [
     src: '/design-learning.jpg',
     caption: 'Learning Must Not Pause',
     label: 'Education cover advert',
-    alt: 'Learning Must Not Pause education cover advert by Victor Autocore',
+    alt: 'Learning Must Not Pause education cover advert design',
   },
   {
     id: 'day-one',
@@ -251,7 +251,7 @@ const DESIGN_PORTFOLIO: DesignWorkItem[] = [
     src: '/design-day-one.jpg',
     caption: 'Monday is Day One',
     label: 'Tech academy poster',
-    alt: 'Monday is Day One tech academy poster by Victor Autocore',
+    alt: 'Monday is Day One tech academy poster design',
   },
   {
     id: 'brand-sale',
@@ -259,7 +259,7 @@ const DESIGN_PORTFOLIO: DesignWorkItem[] = [
     src: '/design-brand-sale.jpg',
     caption: 'Brand identity sale advert',
     label: 'Victor Autocore',
-    alt: 'Brand identity sale advert by Victor Autocore',
+    alt: 'Brand identity sale advert Victor Autocore design',
   },
   {
     id: 'customers',
@@ -267,7 +267,7 @@ const DESIGN_PORTFOLIO: DesignWorkItem[] = [
     src: '/design-customers.jpg',
     caption: 'Where Are the Customers',
     label: 'Lead generation graphic',
-    alt: 'Where Are the Customers lead generation graphic by Victor Autocore',
+    alt: 'Where Are the Customers lead generation graphic design',
   },
   {
     id: 'creativity',
@@ -275,7 +275,7 @@ const DESIGN_PORTFOLIO: DesignWorkItem[] = [
     src: '/design-creativity.jpg',
     caption: 'Is Your Creativity Running Low',
     label: 'Concept poster',
-    alt: 'Is Your Creativity Running Low concept poster by Victor Autocore',
+    alt: 'Is Your Creativity Running Low concept poster design',
   },
   {
     id: 'next-client',
@@ -283,7 +283,7 @@ const DESIGN_PORTFOLIO: DesignWorkItem[] = [
     src: '/design-next-client.jpg',
     caption: 'Your Next Client Is Already Scrolling',
     label: 'Agency graphic',
-    alt: 'Your Next Client Is Already Scrolling agency graphic by Victor Autocore',
+    alt: 'Your Next Client Is Already Scrolling agency graphic design',
   },
 ];
 

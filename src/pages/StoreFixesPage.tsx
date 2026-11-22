@@ -10,25 +10,21 @@ const STORE_FAQS: FaqItem[] = [
   {
     question: 'What is a store check?',
     answer:
-      'I open your store like a stranger who wants to buy. I check the order of your products, your free guide, your descriptions and whether your bio and your store tell the same story. Then I show you what I found.',
+      'A look through your online store the way a buyer sees it: what the offer says, how the products are arranged, and where a visitor would get confused or leave.',
+  },
+  {
+    question: 'Which stores do you work on?',
+    answer: 'Stan Store, Beacons and Gumroad stores, mostly for faceless digital product sellers.',
   },
   {
     question: 'What do you fix?',
     answer:
-      'Product order, where your free guide sits, product descriptions, your welcome message, and the match between your Instagram bio and your store.',
+      'The order of products on the page, your own story and offer at the top where buyers see it first, product wording, and the words Google reads so buyers searching Google can find the store.',
   },
   {
-    question: 'Which stores do you work on?',
-    answer: 'Stan Store, Beacons and Gumroad.',
-  },
-  {
-    question: 'Why is the first check free?',
-    answer: 'So you can see the problems with your own eyes before you pay for anything.',
-  },
-  {
-    question: 'Can you also get my store found on Google?',
+    question: 'Is the first check really free?',
     answer:
-      'Yes, that is the deeper paid work. Every day, people who are not on Instagram type what they want into Google search, ready to buy. If your store is worded and set up right, Google shows it to them for free. Right now, most sellers\u2019 stores would not show at all.',
+      'Yes. The first store check and the store side fixes to get started are free. Deeper Google visibility work after that is paid work, and you decide if you want it.',
   },
 ];
 
@@ -47,7 +43,7 @@ const STORE_WORKFLOW_PHOTOS = [
 export function StoreFixesPage() {
   return (
     <>
-      <SeoHead seo={PAGE_SEO.storeFixes} />
+      <SeoHead seo={PAGE_SEO.storeFixes} faq={STORE_FAQS} />
 
       <section className="py-16 sm:py-22">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">

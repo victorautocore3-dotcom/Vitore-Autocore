@@ -326,50 +326,50 @@ export const PAGE_SEO: Record<string, PageSeo> = {
   },
   aiVideoAds: {
     path: '/ai-video-ads',
-    title: 'AI Video Ads and Reels | Victor Autocore',
+    title: 'AI Video Ads and Reels for Small Businesses | Victor Autocore',
     description:
-      'Finished AI video adverts and Reels for small brands and online sellers. No filming needed. Send your photos, get a video ready to post.',
+      'Finished AI video adverts and Reels for small brands and online sellers. A character talks on camera about your product, no filming needed, delivered ready to post.',
   },
   socialMedia: {
     path: '/social-media-management',
-    title: 'Social Media Management | Victor Autocore',
+    title: 'Social Media Management for Small Businesses | Victor Autocore',
     description:
-      'Posts, stories, Reels, captions and a content calendar for Instagram, Facebook and TikTok, created for you and approved by you before posting.',
+      'Posts, Stories, Reels, captions and a monthly content calendar for Instagram, Facebook and TikTok, handled for you remotely, for clients worldwide.',
   },
   storeFixes: {
     path: '/store-fixes',
     title: 'Store Setup and Fixes for Online Sellers | Victor Autocore',
     description:
-      'Free first store check for faceless sellers on Stan Store, Beacons and Gumroad. Product order, free guide placement, descriptions and bio fixes that help buyers buy.',
+      'Stan Store, Beacons and Gumroad stores checked and fixed so visitors understand the offer and buy. Free first store check for faceless digital product sellers.',
   },
   googleVisibility: {
     path: '/google-visibility',
     title: 'Google Visibility Setup: SEO, AEO and GEO | Victor Autocore',
     description:
-      'Get found on Google and recommended by AI. SEO, AEO and GEO setup for clinics, heating engineers and wedding photographers, with before and after proof.',
+      'Get found on Google and recommended by AI search. SEO, AEO and GEO setup for small businesses, with before and after proof of where you stand in your town search.',
   },
   websiteDesign: {
     path: '/website-design',
-    title: 'Website and App Design | Victor Autocore',
+    title: 'Website and App Design for Small Businesses | Victor Autocore',
     description:
-      'Business websites built the search way from day one: one page per service, buyer questions answered, ready for Google and AI search.',
+      'Business websites and apps designed clean, fast and built the search way from day one, so Google and AI search can find and describe you correctly.',
   },
   graphicsDesign: {
     path: '/graphics-design',
-    title: 'Graphics Design | Victor Autocore',
+    title: 'Graphics Design and Flyers | Victor Autocore',
     description:
-      'Graphics design for small businesses, churches and schools: social media design, brand identity, posters, flyers and advertising graphics by Victor Autocore.',
+      'Flyers, posters and social media designs for businesses and events, made sharp and ready to print or post. See the 28 piece portfolio gallery.',
   },
   about: {
     path: '/about',
-    title: 'About Victor | Victor Autocore',
+    title: 'About Victor Autocore | Akinjide Akinola',
     description:
-      'Akinjide Akinola (Victor): social media manager and AI video creator working remotely for brands worldwide since 2020, community manager at wilds.ai since 2024.',
+      'Victor Autocore is run by Akinjide Akinola, a social media manager and AI video creator working remotely for clients worldwide, community manager at wilds.ai since 2024.',
   },
   contact: {
     path: '/contact',
-    title: 'Contact | Victor Autocore',
+    title: 'Contact Victor Autocore | WhatsApp and Email',
     description:
-      'Message Victor Autocore on WhatsApp or email victorautocore@gmail.com for AI video ads, social media management, store fixes or Google visibility setup.',
+      'Message Victor Autocore on WhatsApp or by email about AI video ads, social media management, store fixes, Google visibility or design work.',
   },
 };

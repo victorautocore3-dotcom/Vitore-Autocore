@@ -9,24 +9,24 @@ import {BUSINESS_FACTS, PAGE_SEO, STOCK_PHOTOS} from '../data/business';
 
 const GOOGLE_FAQS: FaqItem[] = [
   {
-    question: 'How long before I see a difference?',
+    question: 'What is SEO, AEO and GEO?',
     answer:
-      'Search and AI answers move in weeks, not days. Your after picture is taken two to four weeks after the setup.',
+      'SEO helps your business show in Google search results. AEO helps AI answer tools quote your business when people ask questions. GEO helps AI search engines like ChatGPT and Gemini understand and recommend your business. The setup covers all three together.',
   },
   {
-    question: 'Do you guarantee first place on Google?',
+    question: 'Why does my business not show on Google?',
     answer:
-      'No honest person can guarantee that. What you get is the full setup done properly, and before and after proof you can see with your own eyes.',
+      'Usually the words on the website, the business listings and the reviews are not set up the way Google reads them, so Google shows other businesses first. A check of your town search shows exactly where you stand.',
   },
   {
-    question: 'What do you need from me?',
+    question: 'What do you set up for me?',
     answer:
-      'Access to your website and your Google Business Profile, and your business facts: services, towns, phone number.',
+      'Your website wording and page structure, your business name and details across the web, review placement on your own site, and answers to the questions buyers ask, so Google and AI search can name your business.',
   },
   {
-    question: 'I am not technical. Is that a problem?',
+    question: 'How long before I see a change?',
     answer:
-      'No. Everything is explained in plain words, and you see the before and after pictures yourself.',
+      'Google usually needs some weeks to re-read a site after changes. You get before and after proof of your position in your town search, so you can see the movement yourself.',
   },
 ];
 
@@ -112,7 +112,7 @@ const LOCAL_BUSINESS_GALLERY = [
 export function GoogleVisibilityPage() {
   return (
     <>
-      <SeoHead seo={PAGE_SEO.googleVisibility} />
+      <SeoHead seo={PAGE_SEO.googleVisibility} faq={GOOGLE_FAQS} />
 
       <section className="py-16 sm:py-22">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">

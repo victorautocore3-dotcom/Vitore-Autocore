@@ -10,27 +10,22 @@ const VIDEO_FAQS: FaqItem[] = [
   {
     question: 'Do I need to film anything?',
     answer:
-      'No. You send your product photos or your store link and a few facts about your offer. The video is built for you, start to finish.',
+      'No. The adverts are made with AI video, with a character on camera talking about your product. You just share your product photos and details.',
   },
   {
-    question: 'What kind of videos do you make?',
+    question: 'What do I get?',
     answer:
-      'Product adverts, promotional Reels, book trailers and short sales videos, made in a cinema style with a real talking presenter or strong visuals and captions.',
+      'A finished video advert or Reel, ready to post, made to catch attention in the first seconds and hold it to the end.',
   },
   {
-    question: 'How long does a video take?',
+    question: 'How long is a video advert?',
     answer:
-      'Most short adverts are ready within a few days of receiving your photos and facts.',
+      'About one minute is the standard length, short enough to hold attention and long enough to explain the product.',
   },
   {
-    question: 'What do you need from me to start?',
+    question: 'Can you make a sample for my business first?',
     answer:
-      'Your product photos or store link, what you are selling, and who you want to reach.',
-  },
-  {
-    question: 'How much does it cost?',
-    answer:
-      'Every project is priced on what it needs. Message on WhatsApp or email with your idea and you will get a clear price before any work starts.',
+      'Yes, samples for different business types are on this website, and a sample can be made for your product so you see the style before ordering more.',
   },
 ];
 
@@ -93,7 +88,7 @@ const SAMPLE_ADVERTS = [
 export function AiVideoAdsPage() {
   return (
     <>
-      <SeoHead seo={PAGE_SEO.aiVideoAds} />
+      <SeoHead seo={PAGE_SEO.aiVideoAds} faq={VIDEO_FAQS} />
 
       <section className="py-16 sm:py-22">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">

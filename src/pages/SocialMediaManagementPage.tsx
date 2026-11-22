@@ -8,22 +8,22 @@ import {BUSINESS_FACTS, PAGE_SEO, STOCK_PHOTOS} from '../data/business';
 
 const SOCIAL_FAQS: FaqItem[] = [
   {
-    question: 'Which platforms do you manage?',
+    question: 'What do you handle for me?',
+    answer:
+      'Posts, Stories, Reels, captions and the content calendar, so your pages stay active and consistent without you doing the daily work.',
+  },
+  {
+    question: 'Which platforms?',
     answer: 'Instagram, Facebook and TikTok.',
   },
   {
-    question: 'Do you create the content or do I?',
-    answer:
-      'Everything is created for you: the videos, the designs, the captions and the calendar. You approve before anything posts.',
+    question: 'Do you write the captions?',
+    answer: 'Yes, captions and hashtags are included, written for your business and your audience.',
   },
   {
-    question: 'How often do you post?',
-    answer: 'That depends on the plan we agree. Consistent posting on a calendar, never random.',
-  },
-  {
-    question: 'I already have a page. Can you work with it?',
+    question: 'How do we start?',
     answer:
-      'Yes. The first step is a look at your current page and what is stopping it from growing.',
+      'Send a message on WhatsApp or by email, tell me about your business, and we agree the plan before anything is posted.',
   },
 ];
 
@@ -69,7 +69,7 @@ const SOCIAL_GALLERY = [
 export function SocialMediaManagementPage() {
   return (
     <>
-      <SeoHead seo={PAGE_SEO.socialMedia} />
+      <SeoHead seo={PAGE_SEO.socialMedia} faq={SOCIAL_FAQS} />
 
       <section className="py-16 sm:py-22">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
