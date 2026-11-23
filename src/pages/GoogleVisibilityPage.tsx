@@ -5,7 +5,7 @@ import {ContactCtaStrip} from '../components/ContactCtaStrip';
 import {StudioImage} from '../components/StudioImage';
 import {AiVisibilityPanel} from '../components/AiVisibilityPanel';
 import {HeroEntrance, RevealSection} from '../components/MotionPrimitives';
-import {BUSINESS_FACTS, PAGE_SEO, STOCK_PHOTOS} from '../data/business';
+import {BUSINESS_FACTS, PAGE_SEO} from '../data/business';
 
 const GOOGLE_FAQS: FaqItem[] = [
   {
@@ -103,10 +103,19 @@ const LOCAL_TRADES = [
   'Wedding photographers',
 ];
 
-const LOCAL_BUSINESS_GALLERY = [
-  STOCK_PHOTOS.ukHighStreet,
-  STOCK_PHOTOS.localShopFront,
-  STOCK_PHOTOS.boutiqueShopFront,
+const VISIBILITY_TILES = [
+  {
+    src: '/tile-seo.png',
+    alt: 'A business ranked number 1 on Google page 1',
+  },
+  {
+    src: '/tile-aeo.png',
+    alt: "A business named in Google's AI Overview answer",
+  },
+  {
+    src: '/tile-geo.png',
+    alt: 'ChatGPT recommending a business by name',
+  },
 ];
 
 export function GoogleVisibilityPage() {
@@ -156,13 +165,13 @@ export function GoogleVisibilityPage() {
             </HeroEntrance>
 
             <HeroEntrance delay={0.12} className="lg:col-span-5">
-              <div className="group h-full min-h-[260px] rounded-2xl overflow-hidden border border-[#2C2C28] bg-[#1C1C1A]">
+              <div className="h-full rounded-2xl overflow-hidden border border-[#2C2C28] bg-white flex items-center justify-center">
                 <StudioImage
-                  src={STOCK_PHOTOS.phoneMapSearch.src}
-                  fallbackSrc={STOCK_PHOTOS.phoneMapSearch.fallbackSrc}
-                  alt={STOCK_PHOTOS.phoneMapSearch.alt}
+                  src="/hero-explainer.png"
+                  fallbackSrc="/hero-explainer.png"
+                  alt="SEO, AEO and GEO explained: rank on page 1, be in the answer box, be the recommendation"
                   eager
-                  className="w-full h-full object-cover group-hover:scale-[1.03]"
+                  className="w-full h-full object-contain"
                 />
               </div>
             </HeroEntrance>
@@ -173,16 +182,16 @@ export function GoogleVisibilityPage() {
       <section className="py-10 border-t border-[#2C2C28] bg-[#161614]">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <RevealSection className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {LOCAL_BUSINESS_GALLERY.map((photo) => (
+            {VISIBILITY_TILES.map((photo) => (
               <div
                 key={photo.src}
-                className="group aspect-[16/10] rounded-xl overflow-hidden border border-[#2C2C28] bg-[#1C1C1A]"
+                className="rounded-xl overflow-hidden border border-[#2C2C28] bg-white flex items-center justify-center"
               >
                 <StudioImage
                   src={photo.src}
-                  fallbackSrc={photo.fallbackSrc}
+                  fallbackSrc={photo.src}
                   alt={photo.alt}
-                  className="w-full h-full object-cover group-hover:scale-[1.03]"
+                  className="w-full h-auto object-contain block"
                 />
               </div>
             ))}
@@ -225,6 +234,14 @@ export function GoogleVisibilityPage() {
               );
             })}
           </div>
+          <RevealSection className="mt-8 rounded-2xl overflow-hidden border border-[#2C2C28] bg-white">
+            <StudioImage
+              src="/tile-map.png"
+              fallbackSrc="/tile-map.png"
+              alt="The Google map business list buyers see first"
+              className="w-full h-auto object-contain block"
+            />
+          </RevealSection>
         </div>
       </section>
 
@@ -239,6 +256,15 @@ export function GoogleVisibilityPage() {
               Your business is checked across the AI assistants buyers use, using a clear six-part
               checklist.
             </p>
+          </RevealSection>
+
+          <RevealSection className="rounded-2xl overflow-hidden border border-[#2C2C28] bg-white">
+            <StudioImage
+              src="/tile-check.png"
+              fallbackSrc="/tile-check.png"
+              alt="AI visibility check: where a business stands before and after setup"
+              className="w-full h-auto object-contain block"
+            />
           </RevealSection>
 
           <AiVisibilityPanel />
@@ -256,6 +282,15 @@ export function GoogleVisibilityPage() {
               Every part of the setup is done cleanly and checked with real before and after
               pictures.
             </p>
+          </RevealSection>
+
+          <RevealSection className="mt-8 rounded-2xl overflow-hidden border border-[#2C2C28] bg-white">
+            <StudioImage
+              src="/tile-beforeafter.png"
+              fallbackSrc="/tile-beforeafter.png"
+              alt="Before and after: a business missing from page 1, then leading the list after setup"
+              className="w-full h-auto object-contain block"
+            />
           </RevealSection>
 
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -290,6 +325,19 @@ export function GoogleVisibilityPage() {
       </section>
 
       <FaqSection items={GOOGLE_FAQS} />
+
+      <section className="py-10 sm:py-14 border-t border-[#2C2C28]">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+          <RevealSection className="rounded-2xl overflow-hidden border border-[#2C2C28] bg-white">
+            <StudioImage
+              src="/tile-brand.png"
+              fallbackSrc="/tile-brand.png"
+              alt="Victor Autocore's own website holding positions 1, 2 and 3 in a Google search for his name"
+              className="w-full h-auto object-contain block"
+            />
+          </RevealSection>
+        </div>
+      </section>
 
       <ContactCtaStrip
         heading="Want to see how your business shows up right now?"
