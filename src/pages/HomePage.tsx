@@ -15,6 +15,7 @@ import {SeoHead} from '../components/SeoHead';
 import {StudioImage} from '../components/StudioImage';
 import {AiVisibilityPanel} from '../components/AiVisibilityPanel';
 import {HeroEntrance, RevealSection} from '../components/MotionPrimitives';
+import {GoogleReviewsSection} from '../components/GoogleReviewsSection';
 import {BUSINESS_FACTS, PAGE_SEO, SERVICE_LINKS, STOCK_PHOTOS} from '../data/business';
 
 const SYSTEM_PILLARS = [
@@ -480,6 +481,8 @@ export function HomePage() {
           </RevealSection>
         </div>
       </section>
+
+      <GoogleReviewsSection showFilterTabs />
 
       <section className="py-16 sm:py-22 border-t border-[#2C2C28] bg-[#161614]">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">

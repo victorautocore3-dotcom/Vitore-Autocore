@@ -17,6 +17,7 @@ import {FaqSection, type FaqItem} from '../components/FaqSection';
 import {ContactCtaStrip} from '../components/ContactCtaStrip';
 import {StudioImage} from '../components/StudioImage';
 import {HeroEntrance, RevealSection} from '../components/MotionPrimitives';
+import {GoogleReviewsSection} from '../components/GoogleReviewsSection';
 import {BUSINESS_FACTS, PAGE_SEO, STOCK_PHOTOS} from '../data/business';
 
 interface SampleItem {
@@ -836,6 +837,12 @@ export function WebsiteDesignPage() {
           </div>
         </div>
       )}
+
+      <GoogleReviewsSection
+        serviceFilter="website-design"
+        heading="Website & App Design client reviews"
+        subheading="Feedback from practices and service businesses after launching search-structured websites and intake web apps."
+      />
 
       <FaqSection items={WEBSITE_FAQS} />
 

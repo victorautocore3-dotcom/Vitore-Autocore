@@ -4,6 +4,7 @@ import {FaqSection, type FaqItem} from '../components/FaqSection';
 import {ContactCtaStrip} from '../components/ContactCtaStrip';
 import {StudioImage} from '../components/StudioImage';
 import {HeroEntrance, RevealSection} from '../components/MotionPrimitives';
+import {GoogleReviewsSection} from '../components/GoogleReviewsSection';
 import {BUSINESS_FACTS, PAGE_SEO, STOCK_PHOTOS} from '../data/business';
 
 const SOCIAL_FAQS: FaqItem[] = [
@@ -167,6 +168,12 @@ export function SocialMediaManagementPage() {
           </div>
         </div>
       </section>
+
+      <GoogleReviewsSection
+        serviceFilter="social-media-management"
+        heading="Social Media Management client reviews"
+        subheading="What business owners say about having their monthly content calendar, Reels and captions handled remotely."
+      />
 
       <FaqSection items={SOCIAL_FAQS} />
 

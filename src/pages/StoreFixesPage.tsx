@@ -4,6 +4,7 @@ import {FaqSection, type FaqItem} from '../components/FaqSection';
 import {ContactCtaStrip} from '../components/ContactCtaStrip';
 import {StudioImage} from '../components/StudioImage';
 import {HeroEntrance, RevealSection} from '../components/MotionPrimitives';
+import {GoogleReviewsSection} from '../components/GoogleReviewsSection';
 import {BUSINESS_FACTS, PAGE_SEO, STOCK_PHOTOS} from '../data/business';
 
 const STORE_FAQS: FaqItem[] = [
@@ -157,6 +158,12 @@ export function StoreFixesPage() {
           </RevealSection>
         </div>
       </section>
+
+      <GoogleReviewsSection
+        serviceFilter="store-fixes"
+        heading="Store Setup & Fixes client reviews"
+        subheading="Feedback from digital product sellers on Stan Store, Beacons and Gumroad after their store check and fixes."
+      />
 
       <FaqSection items={STORE_FAQS} />
 

@@ -4,6 +4,7 @@ import {FaqSection, type FaqItem} from '../components/FaqSection';
 import {ContactCtaStrip} from '../components/ContactCtaStrip';
 import {StudioImage} from '../components/StudioImage';
 import {HeroEntrance, RevealSection} from '../components/MotionPrimitives';
+import {GoogleReviewsSection} from '../components/GoogleReviewsSection';
 import {BUSINESS_FACTS, PAGE_SEO, STOCK_PHOTOS} from '../data/business';
 
 const VIDEO_FAQS: FaqItem[] = [
@@ -257,6 +258,12 @@ export function AiVideoAdsPage() {
           </RevealSection>
         </div>
       </section>
+
+      <GoogleReviewsSection
+        serviceFilter="ai-video-ads"
+        heading="AI Video Ads & Reels client reviews"
+        subheading="What brands, authors and online sellers say about getting finished AI video adverts without filming."
+      />
 
       <FaqSection items={VIDEO_FAQS} />
 

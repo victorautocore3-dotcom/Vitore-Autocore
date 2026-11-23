@@ -16,6 +16,7 @@ import {FaqSection, type FaqItem} from '../components/FaqSection';
 import {ContactCtaStrip} from '../components/ContactCtaStrip';
 import {StudioImage} from '../components/StudioImage';
 import {HeroEntrance, RevealSection} from '../components/MotionPrimitives';
+import {GoogleReviewsSection} from '../components/GoogleReviewsSection';
 import {BUSINESS_FACTS, PAGE_SEO} from '../data/business';
 
 interface DesignWorkItem {
@@ -545,6 +546,12 @@ export function GraphicsDesignPage() {
           </div>
         </div>
       )}
+
+      <GoogleReviewsSection
+        serviceFilter="graphics-design"
+        heading="Graphics Design & Flyers client reviews"
+        subheading="What churches, academies and local businesses say about their flyers, posters and social media graphics."
+      />
 
       <FaqSection items={GRAPHICS_FAQS} />
 

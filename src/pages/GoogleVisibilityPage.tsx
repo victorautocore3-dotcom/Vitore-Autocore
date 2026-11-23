@@ -5,6 +5,7 @@ import {ContactCtaStrip} from '../components/ContactCtaStrip';
 import {StudioImage} from '../components/StudioImage';
 import {AiVisibilityPanel} from '../components/AiVisibilityPanel';
 import {HeroEntrance, RevealSection} from '../components/MotionPrimitives';
+import {GoogleReviewsSection} from '../components/GoogleReviewsSection';
 import {BUSINESS_FACTS, PAGE_SEO} from '../data/business';
 
 const GOOGLE_FAQS: FaqItem[] = [
@@ -323,6 +324,12 @@ export function GoogleVisibilityPage() {
           </RevealSection>
         </div>
       </section>
+
+      <GoogleReviewsSection
+        serviceFilter="google-visibility"
+        heading="Google Visibility client reviews"
+        subheading="Feedback from small business owners after their Google Search, Maps, and AI answer engine setup."
+      />
 
       <FaqSection items={GOOGLE_FAQS} />
 
