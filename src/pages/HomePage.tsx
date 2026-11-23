@@ -265,12 +265,17 @@ export function HomePage() {
           <div className="mt-12 space-y-8">
             {SERVICE_LINKS.map((service, index) => {
               const isReversed = index % 2 === 1;
+              const isFullGraphicPanel = service.number === '04';
               return (
                 <RevealSection key={service.path} delay={index * 0.05}>
                   <article className="group bg-[#1C1C1A] border border-[#2C2C28] hover:border-[#40403A] hover:-translate-y-0.5 transition-all duration-200 rounded-2xl overflow-hidden">
                     <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch">
                       <div
-                        className={`lg:col-span-5 min-h-[240px] sm:min-h-[300px] bg-[#141413] overflow-hidden ${
+                        className={`lg:col-span-5 min-h-[240px] sm:min-h-[300px] ${
+                          isFullGraphicPanel
+                            ? 'bg-white flex items-center justify-center'
+                            : 'bg-[#141413]'
+                        } overflow-hidden ${
                           isReversed ? 'lg:order-2' : 'lg:order-1'
                         }`}
                       >
@@ -278,7 +283,11 @@ export function HomePage() {
                           src={service.image}
                           fallbackSrc={service.fallbackImage}
                           alt={service.imageAlt}
-                          className="w-full h-full object-cover group-hover:scale-[1.03]"
+                          className={
+                            isFullGraphicPanel
+                              ? 'w-full h-full object-contain'
+                              : 'w-full h-full object-cover group-hover:scale-[1.03]'
+                          }
                         />
                       </div>
 

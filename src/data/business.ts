@@ -265,9 +265,10 @@ export const SERVICE_LINKS: ServiceLinkItem[] = [
     summary:
       'Full search and AI answer setup so buyers find you on Google and AI tools recommend your business, backed by before and after proof.',
     audience: 'Aesthetic clinics, heating engineers and wedding photographers',
-    image: STOCK_PHOTOS.shopOwnerCounter.src,
-    fallbackImage: STOCK_PHOTOS.shopOwnerCounter.fallbackSrc,
-    imageAlt: STOCK_PHOTOS.shopOwnerCounter.alt,
+    image: '/assets/aistudio/seo-aeo-geo-roofers_cd30342c.jpg',
+    fallbackImage: '/assets/aistudio/seo-aeo-geo-roofers_cd30342c.jpg',
+    imageAlt:
+      'SEO, AEO and GEO explained: rank on page 1, be in the answer box, be the recommendation',
     subServices: [
       'Before and after proof',
       'Google Business Profile',
