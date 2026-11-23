@@ -316,6 +316,25 @@ export const SERVICE_LINKS: ServiceLinkItem[] = [
       'Photo compositing',
     ],
   },
+  {
+    number: '07',
+    title: 'Shopify Store Services',
+    shortTitle: 'Shopify Store Services',
+    path: '/shopify-store-services',
+    summary:
+      'New store setup, redesigns, product listings, store audits, Google search and AI answer setup, conversion and email fixes, product videos and ongoing store help for Shopify store owners worldwide.',
+    audience: 'Shopify store owners',
+    image: STOCK_PHOTOS.packingOrdersBoxes.src,
+    fallbackImage: STOCK_PHOTOS.packingOrdersBoxes.fallbackSrc,
+    imageAlt: STOCK_PHOTOS.packingOrdersBoxes.alt,
+    subServices: [
+      'New store setup and launch',
+      'Product listings and store audit',
+      'Google and AI answer setup',
+      'Conversion and email fixes',
+      'Product videos and ongoing help',
+    ],
+  },
 ];
 
 export const PAGE_SEO: Record<string, PageSeo> = {
@@ -360,6 +379,12 @@ export const PAGE_SEO: Record<string, PageSeo> = {
     title: 'Graphics Design and Flyers | Victor Autocore',
     description:
       'Flyers, posters and social media designs for businesses and events, made sharp and ready to print or post. See the 28 piece portfolio gallery.',
+  },
+  shopifyStoreServices: {
+    path: '/shopify-store-services',
+    title: 'Shopify Store Services for Shopify Store Owners | Victor Autocore',
+    description:
+      'Shopify store setup, redesign, product listings, store audit, Google search setup, AI answer visibility, conversion fixes, email basics, product videos and ongoing store help for store owners worldwide.',
   },
   about: {
     path: '/about',

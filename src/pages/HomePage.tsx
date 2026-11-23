@@ -255,7 +255,7 @@ export function HomePage() {
           <RevealSection className="max-w-2xl">
             <p className="text-sm font-medium text-[#F59E0B]">Services</p>
             <h2 className="mt-2 font-display text-3xl sm:text-4xl font-bold tracking-tight text-[#F4F3EE]">
-              Six ways Victor Autocore helps your business
+              Seven ways Victor Autocore helps your business
             </h2>
             <p className="mt-3 text-base text-[#B3B2AB] leading-relaxed">
               Every project is handled personally from start to finish. Open any service below to
