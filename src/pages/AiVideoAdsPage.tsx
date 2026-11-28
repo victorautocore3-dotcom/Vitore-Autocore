@@ -84,6 +84,72 @@ const SAMPLE_ADVERTS = [
     title: 'Christmas Gift Card Trailer',
     description: 'Christmas gift card trailer for a nails and aesthetics salon in Chelmsford',
   },
+  {
+    src: '/videos/ojaja-warrior-legend.mp4',
+    poster: '/videos/ojaja-warrior-legend.jpg',
+    title: 'Ojaja Warrior Legend',
+    description: 'A 60 second cinematic brand film made for the Ojaja Drinks AI video challenge.',
+  },
+  {
+    src: '/videos/ojaja-one-sip.mp4',
+    poster: '/videos/ojaja-one-sip.jpg',
+    title: 'One Sip. The City Wakes Up.',
+    description: 'A 60 second drink advert where one sip brings a whole city to life.',
+  },
+  {
+    src: '/videos/the-inspection-candle-ad.mp4',
+    poster: '/videos/the-inspection-candle-ad.jpg',
+    title: 'The Inspection',
+    description: 'A short story advert for a scented candle brand, built like a tiny film.',
+  },
+  {
+    src: '/videos/share-the-sail-trailer.mp4',
+    poster: '/videos/share-the-sail-trailer.jpg',
+    title: 'Share the Sail',
+    description: 'A fast, punchy trailer for a sailing charter company, cut from their own trip footage.',
+  },
+  {
+    src: '/videos/victor-autocore-christmas-ad.mp4',
+    poster: '/videos/victor-autocore-christmas-ad.jpg',
+    title: 'Victor Autocore Christmas Ad',
+    description: 'A snowy Christmas shopfront advert for my own studio.',
+  },
+  {
+    src: '/videos/book-trailer-ashes.mp4',
+    poster: '/videos/book-trailer-ashes.jpg',
+    title: 'Book Trailer: Ashes of the Fallen Crown',
+    description: 'A cinematic motion graphics trailer for a fantasy novel.',
+  },
+  {
+    src: '/videos/book-trailer-sixth-measure.mp4',
+    poster: '/videos/book-trailer-sixth-measure.jpg',
+    title: 'Book Trailer: The Sixth Measure',
+    description: 'A cinematic motion graphics trailer for a thriller novel.',
+  },
+  {
+    src: '/videos/listing-hentons-cardiff.mp4',
+    poster: '/videos/listing-hentons-cardiff.jpg',
+    title: 'Property Listing Video: Cardiff',
+    description: 'A listing video sample made for an estate agent in Cardiff.',
+  },
+  {
+    src: '/videos/listing-adejumoke.mp4',
+    poster: '/videos/listing-adejumoke.jpg',
+    title: 'Property Listing Video: Avon',
+    description: 'A listing video sample made for an estate agent.',
+  },
+  {
+    src: '/videos/listing-morrison.mp4',
+    poster: '/videos/listing-morrison.jpg',
+    title: 'Property Listing Video: Warradale',
+    description: 'A listing video sample made for an estate agent in Warradale.',
+  },
+  {
+    src: '/videos/the-entrance.mp4',
+    poster: '/videos/the-entrance.jpg',
+    title: 'The Entrance',
+    description: 'A cinematic short built around one powerful entrance.',
+  },
 ];
 
 export function AiVideoAdsPage() {
